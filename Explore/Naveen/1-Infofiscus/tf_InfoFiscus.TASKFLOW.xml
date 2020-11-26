@@ -1,0 +1,1795 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>aaa-gt-4207406-2020-11-06T11:16:21.004Z::tf.xml</types1:EntryId>
+      <types1:Name>tf_InfoFiscus</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>panabaka.saikumar@infometry.net</types1:CreatedBy>
+      <types1:CreationDate>2020-11-06T11:16:21Z</types1:CreationDate>
+      <types1:ModifiedBy>panabaka.saikumar@infometry.net</types1:ModifiedBy>
+      <types1:ModificationDate>2020-11-25T07:21:16Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
+      <types1:PublishedBy>panabaka.saikumar@infometry.net</types1:PublishedBy>
+      <types1:PublicationDate>2020-11-09T13:23:43Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.tf_InfoFiscus/tf_InfoFiscus.tf.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="tf_InfoFiscus"
+                   name="tf_InfoFiscus"
+                   overrideAPIName="false">
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description=""
+                      name="mtt_Netsuite_Accounts_to_Landing_DB_Accounts"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mtt-Netsuite-Accounts-to-Landing-DB-Accounts</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="mtt_Netsuite_Accountingperiods_to_Landing_DB_Accountingperiods"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mtt-Netsuite-Accountingperiods-to-Landing-DB-Accountingperiods</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="mtt_Netsuite_Currencies_to_Landing_DB_Currencies"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mtt-Netsuite-Currencies-to-Landing-DB-Currencies</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="mtt_Netsuite_Departments_to_Landing_DB_Departments"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mtt-Netsuite-Departments-to-Landing-DB-Departments</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="mtt_Netsuite_Subsidiaries_to_Landing_DB_Subsidiaries"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mtt-Netsuite-Subsidiaries-to-Landing-DB-Subsidiaries</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="mtt_Netsuite_Transaction_Lines_to_Landing_DB_Transaction_Lines"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mtt-Netsuite-Transaction-Lines-to-Landing-DB-Transaction-Lines</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="mtt_Netsuite_Transactions_to_Landing_DB_Transactions"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mtt-Netsuite-Transactions-to-Landing-DB-Transactions</option>
+                  </options>
+               </field>
+               <field description="" name="mtt_Landing_to_STG_COA" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mtt-Landing-to-STG-COA</option>
+                  </options>
+               </field>
+               <field description="" name="mtt_Landing_to_STG_ENTITY" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mtt-Landing-to-STG-ENTITY</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="mtt_Landing_to_STG_GL_TRANSACTION"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mtt-Landing-to-STG-GL-TRANSACTION</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="mtt_Landing_Currencies_To_Stage_Currencies"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mtt-Landing-Currencies-To-Stage-Currencies</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="mtt_Landing_Accounts_to_STG_DIMENSIONS"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mtt-Landing-Accounts-to-STG-DIMENSIONS</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="mtt_Landing_Departments_to_STG_DIMENSIONS"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mtt-Landing-Departments-to-STG-DIMENSIONS</option>
+                  </options>
+               </field>
+               <field description="" name="mtt_Stg_Entity_to_Dim_Entity" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mtt-Stg-Entity-to-Dim-Entity</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="mtt_STG_Currencies_to_Dim_Currencies"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mtt-STG-Currencies-to-Dim-Currencies</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="mtt_Stg_Dimensions_to_Dim_Account"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mtt-Stg-Dimensions-to-Dim-Account</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="mtt_Stg_Dimensions_to_Dim_Department"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mtt-Stg-Dimensions-to-Dim-Department</option>
+                  </options>
+               </field>
+               <field description="" name="mct_Dim_Hierarchy" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mct-Dim-Hierarchy</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="mtt_Stg_Chart_of_Account_to_Dim_COA"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mtt-Stg-Chart-of-Account-to-Dim-COA</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="mtt_Finance_FactGLJournals_Load"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mtt-Finance-FactGLJournals-Load</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="mtt_BB_GL_Journals_Aggregation_UNION"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mtt-BB-GL-Journals-Aggregation-UNION</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="mtt_PnL_GL_Journals_Aggregation_new"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mtt-PnL-GL-Journals-Aggregation-new</option>
+                  </options>
+               </field>
+               <field description="" name="mtt_Finance_Fact_Plan_Load" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mtt-Finance-Fact-Plan-Load</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="kh65xk95" targetId="kh65xk94"/>
+               </start>
+               <container id="kh65xk94" type="parallel">
+                  <title>Landing</title>
+                  <flow id="kh65xk98">
+                     <eventContainer id="kh65xkab">
+                        <service id="kh65xka2">
+                           <title>mtt_Netsuite_Accounts_to_Landing_DB_Accounts</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mtt_Netsuite_Accounts_to_Landing_DB_Accounts</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">7A6LQjau8Y8k3CvFDOV6aS</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mtt-Netsuite-Accounts-to-Landing-DB-Accounts">temp.mtt_Netsuite_Accounts_to_Landing_DB_Accounts</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Accounts_to_Landing_DB_Accounts/output/Object_Name">Object Name</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Accounts_to_Landing_DB_Accounts/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Accounts_to_Landing_DB_Accounts/output/Log_Id">Log Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Accounts_to_Landing_DB_Accounts/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Accounts_to_Landing_DB_Accounts/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Accounts_to_Landing_DB_Accounts/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Accounts_to_Landing_DB_Accounts/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Accounts_to_Landing_DB_Accounts/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Accounts_to_Landing_DB_Accounts/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Accounts_to_Landing_DB_Accounts/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Accounts_to_Landing_DB_Accounts/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Accounts_to_Landing_DB_Accounts/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mtt_Netsuite_Accounts_to_Landing_DB_Accounts/fault"
+                                  id="kh65xka9"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mtt_Netsuite_Accounts_to_Landing_DB_Accounts/fault"
+                                  id="kh65xkaa"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kh65xk99" targetId="kh65xk94" type="containerLink"/>
+                  </flow>
+                  <flow id="kh65xk9b">
+                     <eventContainer id="kh65xkbp">
+                        <service id="kh65xkb2">
+                           <title>mtt_Netsuite_Accountingperiods_to_Landing_DB_Accountingperiods</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mtt_Netsuite_Accountingperiods_to_Landing_DB_Accountingperiods</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">cjaDIIf1diwceAxouGy8of</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field"
+                                            to="mtt-Netsuite-Accountingperiods-to-Landing-DB-Accountingperiods">temp.mtt_Netsuite_Accountingperiods_to_Landing_DB_Accountingperiods</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Accountingperiods_to_Landing_DB_Accountingperiods/output/Object_Name">Object Name</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Accountingperiods_to_Landing_DB_Accountingperiods/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Accountingperiods_to_Landing_DB_Accountingperiods/output/Log_Id">Log Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Accountingperiods_to_Landing_DB_Accountingperiods/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Accountingperiods_to_Landing_DB_Accountingperiods/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Accountingperiods_to_Landing_DB_Accountingperiods/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Accountingperiods_to_Landing_DB_Accountingperiods/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Accountingperiods_to_Landing_DB_Accountingperiods/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Accountingperiods_to_Landing_DB_Accountingperiods/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Accountingperiods_to_Landing_DB_Accountingperiods/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Accountingperiods_to_Landing_DB_Accountingperiods/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Accountingperiods_to_Landing_DB_Accountingperiods/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mtt_Netsuite_Accountingperiods_to_Landing_DB_Accountingperiods/fault"
+                                  id="kh65xkbn"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mtt_Netsuite_Accountingperiods_to_Landing_DB_Accountingperiods/fault"
+                                  id="kh65xkbo"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kh65xk9c" targetId="kh65xk94" type="containerLink"/>
+                  </flow>
+                  <flow id="kh65xk9g">
+                     <eventContainer id="kh65xkcb">
+                        <service id="kh65xkc2">
+                           <title>mtt_Netsuite_Currencies_to_Landing_DB_Currencies</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mtt_Netsuite_Currencies_to_Landing_DB_Currencies</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">5xKcWoyzqCBeysIMvi6Xye</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mtt-Netsuite-Currencies-to-Landing-DB-Currencies">temp.mtt_Netsuite_Currencies_to_Landing_DB_Currencies</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Currencies_to_Landing_DB_Currencies/output/Object_Name">Object Name</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Currencies_to_Landing_DB_Currencies/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Currencies_to_Landing_DB_Currencies/output/Log_Id">Log Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Currencies_to_Landing_DB_Currencies/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Currencies_to_Landing_DB_Currencies/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Currencies_to_Landing_DB_Currencies/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Currencies_to_Landing_DB_Currencies/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Currencies_to_Landing_DB_Currencies/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Currencies_to_Landing_DB_Currencies/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Currencies_to_Landing_DB_Currencies/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Currencies_to_Landing_DB_Currencies/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Currencies_to_Landing_DB_Currencies/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mtt_Netsuite_Currencies_to_Landing_DB_Currencies/fault"
+                                  id="kh65xkc9"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mtt_Netsuite_Currencies_to_Landing_DB_Currencies/fault"
+                                  id="kh65xkca"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kh65xk9h" targetId="kh65xk94" type="containerLink"/>
+                  </flow>
+                  <flow id="kh65xk9m">
+                     <eventContainer id="kh65xkdb">
+                        <service id="kh65xkd2">
+                           <title>mtt_Netsuite_Departments_to_Landing_DB_Departments</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mtt_Netsuite_Departments_to_Landing_DB_Departments</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">8C6RiXRQbtUcjaDTThgP62</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mtt-Netsuite-Departments-to-Landing-DB-Departments">temp.mtt_Netsuite_Departments_to_Landing_DB_Departments</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Departments_to_Landing_DB_Departments/output/Object_Name">Object Name</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Departments_to_Landing_DB_Departments/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Departments_to_Landing_DB_Departments/output/Log_Id">Log Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Departments_to_Landing_DB_Departments/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Departments_to_Landing_DB_Departments/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Departments_to_Landing_DB_Departments/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Departments_to_Landing_DB_Departments/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Departments_to_Landing_DB_Departments/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Departments_to_Landing_DB_Departments/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Departments_to_Landing_DB_Departments/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Departments_to_Landing_DB_Departments/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Departments_to_Landing_DB_Departments/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mtt_Netsuite_Departments_to_Landing_DB_Departments/fault"
+                                  id="kh65xkd9"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mtt_Netsuite_Departments_to_Landing_DB_Departments/fault"
+                                  id="kh65xkda"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kh65xk9n" targetId="kh65xk94" type="containerLink"/>
+                  </flow>
+                  <flow id="kh65xk9t">
+                     <eventContainer id="kh65xkeb">
+                        <service id="kh65xke2">
+                           <title>mtt_Netsuite_Subsidiaries_to_Landing_DB_Subsidiaries</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mtt_Netsuite_Subsidiaries_to_Landing_DB_Subsidiaries</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">0e9v3NwSfoveNcglYQzIeB</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field"
+                                            to="mtt-Netsuite-Subsidiaries-to-Landing-DB-Subsidiaries">temp.mtt_Netsuite_Subsidiaries_to_Landing_DB_Subsidiaries</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Subsidiaries_to_Landing_DB_Subsidiaries/output/Object_Name">Object Name</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Subsidiaries_to_Landing_DB_Subsidiaries/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Subsidiaries_to_Landing_DB_Subsidiaries/output/Log_Id">Log Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Subsidiaries_to_Landing_DB_Subsidiaries/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Subsidiaries_to_Landing_DB_Subsidiaries/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Subsidiaries_to_Landing_DB_Subsidiaries/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Subsidiaries_to_Landing_DB_Subsidiaries/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Subsidiaries_to_Landing_DB_Subsidiaries/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Subsidiaries_to_Landing_DB_Subsidiaries/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Subsidiaries_to_Landing_DB_Subsidiaries/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Subsidiaries_to_Landing_DB_Subsidiaries/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Subsidiaries_to_Landing_DB_Subsidiaries/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mtt_Netsuite_Subsidiaries_to_Landing_DB_Subsidiaries/fault"
+                                  id="kh65xke9"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mtt_Netsuite_Subsidiaries_to_Landing_DB_Subsidiaries/fault"
+                                  id="kh65xkea"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kh65xk9u" targetId="kh65xk94" type="containerLink"/>
+                  </flow>
+                  <flow id="kh65xkf1">
+                     <eventContainer id="kh65xkfw">
+                        <service id="kh65xkfl">
+                           <title>mtt_Netsuite_Transaction_Lines_to_Landing_DB_Transaction_Lines</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mtt_Netsuite_Transaction_Lines_to_Landing_DB_Transaction_Lines</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">eeLcLrhyWA0gjeXcxWvsaH</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field"
+                                            to="mtt-Netsuite-Transaction-Lines-to-Landing-DB-Transaction-Lines">temp.mtt_Netsuite_Transaction_Lines_to_Landing_DB_Transaction_Lines</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Transaction_Lines_to_Landing_DB_Transaction_Lines/output/Object_Name">Object Name</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Transaction_Lines_to_Landing_DB_Transaction_Lines/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Transaction_Lines_to_Landing_DB_Transaction_Lines/output/Log_Id">Log Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Transaction_Lines_to_Landing_DB_Transaction_Lines/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Transaction_Lines_to_Landing_DB_Transaction_Lines/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Transaction_Lines_to_Landing_DB_Transaction_Lines/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Transaction_Lines_to_Landing_DB_Transaction_Lines/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Transaction_Lines_to_Landing_DB_Transaction_Lines/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Transaction_Lines_to_Landing_DB_Transaction_Lines/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Transaction_Lines_to_Landing_DB_Transaction_Lines/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Transaction_Lines_to_Landing_DB_Transaction_Lines/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Transaction_Lines_to_Landing_DB_Transaction_Lines/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mtt_Netsuite_Transaction_Lines_to_Landing_DB_Transaction_Lines/fault"
+                                  id="kh65xkfu"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mtt_Netsuite_Transaction_Lines_to_Landing_DB_Transaction_Lines/fault"
+                                  id="kh65xkfv"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kh65xkf2" targetId="kh65xk94" type="containerLink"/>
+                  </flow>
+                  <flow id="kh65xkfa">
+                     <eventContainer id="kh65xkh2">
+                        <service id="kh65xkgr">
+                           <title>mtt_Netsuite_Transactions_to_Landing_DB_Transactions</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mtt_Netsuite_Transactions_to_Landing_DB_Transactions</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">7ln96dPQmGWlJqF39e87u3</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field"
+                                            to="mtt-Netsuite-Transactions-to-Landing-DB-Transactions">temp.mtt_Netsuite_Transactions_to_Landing_DB_Transactions</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Transactions_to_Landing_DB_Transactions/output/Object_Name">Object Name</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Transactions_to_Landing_DB_Transactions/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Transactions_to_Landing_DB_Transactions/output/Log_Id">Log Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Transactions_to_Landing_DB_Transactions/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Transactions_to_Landing_DB_Transactions/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Transactions_to_Landing_DB_Transactions/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Transactions_to_Landing_DB_Transactions/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Transactions_to_Landing_DB_Transactions/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Transactions_to_Landing_DB_Transactions/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Transactions_to_Landing_DB_Transactions/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Transactions_to_Landing_DB_Transactions/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Netsuite_Transactions_to_Landing_DB_Transactions/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mtt_Netsuite_Transactions_to_Landing_DB_Transactions/fault"
+                                  id="kh65xkh0"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mtt_Netsuite_Transactions_to_Landing_DB_Transactions/fault"
+                                  id="kh65xkh1"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kh65xkfb" targetId="kh65xk94" type="containerLink"/>
+                  </flow>
+                  <link id="kh65xk97" targetId="kh65xk98" type="containerLink"/>
+                  <link id="kh65xk9a" targetId="kh65xk9b" type="containerLink"/>
+                  <link id="kh65xk9f" targetId="kh65xk9g" type="containerLink"/>
+                  <link id="kh65xk9l" targetId="kh65xk9m" type="containerLink"/>
+                  <link id="kh65xk9s" targetId="kh65xk9t" type="containerLink"/>
+                  <link id="kh65xkf0" targetId="kh65xkf1" type="containerLink"/>
+                  <link id="kh65xkf9" targetId="kh65xkfa" type="containerLink"/>
+                  <link id="kh65xki5" targetId="kh65xki4"/>
+               </container>
+               <container id="kh65xki4" type="parallel">
+                  <title>Staging</title>
+                  <flow id="kh65xki8">
+                     <eventContainer id="kh65xkkr">
+                        <service id="kh65xkka">
+                           <title>mtt_Landing_to_STG_COA</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mtt_Landing_to_STG_COA</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">6a6hytryiZ4kj59yQyt2kR</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mtt-Landing-to-STG-COA">temp.mtt_Landing_to_STG_COA</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.mtt_Landing_to_STG_COA/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.mtt_Landing_to_STG_COA/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.mtt_Landing_to_STG_COA/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.mtt_Landing_to_STG_COA/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.mtt_Landing_to_STG_COA/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_to_STG_COA/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_to_STG_COA/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_to_STG_COA/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_to_STG_COA/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.mtt_Landing_to_STG_COA/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.mtt_Landing_to_STG_COA/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.mtt_Landing_to_STG_COA/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mtt_Landing_to_STG_COA/fault"
+                                  id="kh65xkkp"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mtt_Landing_to_STG_COA/fault"
+                                  id="kh65xkkq"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kh65xki9" targetId="kh65xki4" type="containerLink"/>
+                  </flow>
+                  <flow id="kh65xkib">
+                     <eventContainer id="kh65xkmf">
+                        <service id="kh65xkly">
+                           <title>mtt_Landing_to_STG_ENTITY</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mtt_Landing_to_STG_ENTITY</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">7Doq7U3ymYbkTCOD725M0b</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mtt-Landing-to-STG-ENTITY">temp.mtt_Landing_to_STG_ENTITY</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.mtt_Landing_to_STG_ENTITY/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.mtt_Landing_to_STG_ENTITY/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.mtt_Landing_to_STG_ENTITY/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.mtt_Landing_to_STG_ENTITY/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.mtt_Landing_to_STG_ENTITY/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_to_STG_ENTITY/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_to_STG_ENTITY/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_to_STG_ENTITY/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_to_STG_ENTITY/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.mtt_Landing_to_STG_ENTITY/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.mtt_Landing_to_STG_ENTITY/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.mtt_Landing_to_STG_ENTITY/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mtt_Landing_to_STG_ENTITY/fault"
+                                  id="kh65xkmd"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mtt_Landing_to_STG_ENTITY/fault"
+                                  id="kh65xkme"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kh65xkic" targetId="kh65xki4" type="containerLink"/>
+                  </flow>
+                  <flow id="kh65xkin">
+                     <eventContainer id="kh65xko3">
+                        <service id="kh65xknm">
+                           <title>mtt_Landing_to_STG_GL_TRANSACTION</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mtt_Landing_to_STG_GL_TRANSACTION</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">iHiZ0j7RIMGiLKakXRxKk5</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mtt-Landing-to-STG-GL-TRANSACTION">temp.mtt_Landing_to_STG_GL_TRANSACTION</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_to_STG_GL_TRANSACTION/output/Object_Name">Object Name</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_to_STG_GL_TRANSACTION/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_to_STG_GL_TRANSACTION/output/Log_Id">Log Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_to_STG_GL_TRANSACTION/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_to_STG_GL_TRANSACTION/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_to_STG_GL_TRANSACTION/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_to_STG_GL_TRANSACTION/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_to_STG_GL_TRANSACTION/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_to_STG_GL_TRANSACTION/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_to_STG_GL_TRANSACTION/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_to_STG_GL_TRANSACTION/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_to_STG_GL_TRANSACTION/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mtt_Landing_to_STG_GL_TRANSACTION/fault"
+                                  id="kh65xko1"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mtt_Landing_to_STG_GL_TRANSACTION/fault"
+                                  id="kh65xko2"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kh65xkio" targetId="kh65xki4" type="containerLink"/>
+                  </flow>
+                  <flow id="kh65xkj0">
+                     <eventContainer id="kh65xkpr">
+                        <service id="kh65xkpa">
+                           <title>mtt_Landing_Currencies_To_Stage_Currencies</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mtt_Landing_Currencies_To_Stage_Currencies</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">8Wx28U9XJillJgdut6Otk7</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mtt-Landing-Currencies-To-Stage-Currencies">temp.mtt_Landing_Currencies_To_Stage_Currencies</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_Currencies_To_Stage_Currencies/output/Object_Name">Object Name</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_Currencies_To_Stage_Currencies/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_Currencies_To_Stage_Currencies/output/Log_Id">Log Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_Currencies_To_Stage_Currencies/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_Currencies_To_Stage_Currencies/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_Currencies_To_Stage_Currencies/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_Currencies_To_Stage_Currencies/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_Currencies_To_Stage_Currencies/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_Currencies_To_Stage_Currencies/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_Currencies_To_Stage_Currencies/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_Currencies_To_Stage_Currencies/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_Currencies_To_Stage_Currencies/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mtt_Landing_Currencies_To_Stage_Currencies/fault"
+                                  id="kh65xkpp"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mtt_Landing_Currencies_To_Stage_Currencies/fault"
+                                  id="kh65xkpq"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kh65xkj1" targetId="kh65xki4" type="containerLink"/>
+                  </flow>
+                  <flow id="kh65xkje">
+                     <eventContainer id="kh65xkrf">
+                        <service id="kh65xkqy">
+                           <title>mtt_Landing_Accounts_to_STG_DIMENSIONS</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mtt_Landing_Accounts_to_STG_DIMENSIONS</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">6gCeOGJnnWQi09C6gxlUQ1</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mtt-Landing-Accounts-to-STG-DIMENSIONS">temp.mtt_Landing_Accounts_to_STG_DIMENSIONS</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_Accounts_to_STG_DIMENSIONS/output/Object_Name">Object Name</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_Accounts_to_STG_DIMENSIONS/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_Accounts_to_STG_DIMENSIONS/output/Log_Id">Log Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_Accounts_to_STG_DIMENSIONS/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_Accounts_to_STG_DIMENSIONS/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_Accounts_to_STG_DIMENSIONS/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_Accounts_to_STG_DIMENSIONS/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_Accounts_to_STG_DIMENSIONS/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_Accounts_to_STG_DIMENSIONS/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_Accounts_to_STG_DIMENSIONS/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_Accounts_to_STG_DIMENSIONS/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_Accounts_to_STG_DIMENSIONS/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mtt_Landing_Accounts_to_STG_DIMENSIONS/fault"
+                                  id="kh65xkrd"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mtt_Landing_Accounts_to_STG_DIMENSIONS/fault"
+                                  id="kh65xkre"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kh65xkjf" targetId="kh65xki4" type="containerLink"/>
+                  </flow>
+                  <flow id="kh65xkjt">
+                     <eventContainer id="kh65xkt3">
+                        <service id="kh65xksm">
+                           <title>mtt_Landing_Departments_to_STG_DIMENSIONS</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mtt_Landing_Departments_to_STG_DIMENSIONS</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">0ZklDululpAfCvfqDdWIwu</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mtt-Landing-Departments-to-STG-DIMENSIONS">temp.mtt_Landing_Departments_to_STG_DIMENSIONS</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_Departments_to_STG_DIMENSIONS/output/Object_Name">Object Name</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_Departments_to_STG_DIMENSIONS/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_Departments_to_STG_DIMENSIONS/output/Log_Id">Log Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_Departments_to_STG_DIMENSIONS/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_Departments_to_STG_DIMENSIONS/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_Departments_to_STG_DIMENSIONS/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_Departments_to_STG_DIMENSIONS/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_Departments_to_STG_DIMENSIONS/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_Departments_to_STG_DIMENSIONS/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_Departments_to_STG_DIMENSIONS/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_Departments_to_STG_DIMENSIONS/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Landing_Departments_to_STG_DIMENSIONS/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mtt_Landing_Departments_to_STG_DIMENSIONS/fault"
+                                  id="kh65xkt1"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mtt_Landing_Departments_to_STG_DIMENSIONS/fault"
+                                  id="kh65xkt2"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kh65xkju" targetId="kh65xki4" type="containerLink"/>
+                  </flow>
+                  <link id="kh65xki7" targetId="kh65xki8" type="containerLink"/>
+                  <link id="kh65xkia" targetId="kh65xkib" type="containerLink"/>
+                  <link id="kh65xkim" targetId="kh65xkin" type="containerLink"/>
+                  <link id="kh65xkiz" targetId="kh65xkj0" type="containerLink"/>
+                  <link id="kh65xkjd" targetId="kh65xkje" type="containerLink"/>
+                  <link id="kh65xkjs" targetId="kh65xkjt" type="containerLink"/>
+                  <link id="kh65xkuo" targetId="kh65xkun"/>
+               </container>
+               <container id="kh65xkun" type="parallel">
+                  <title>Dim Load</title>
+                  <flow id="kh65xkur">
+                     <eventContainer id="kh65xkya">
+                        <service id="kh65xkxn">
+                           <title>mtt_Stg_Entity_to_Dim_Entity</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mtt_Stg_Entity_to_Dim_Entity</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">7q2FeVVK2YMcFuPDcdYWK6</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mtt-Stg-Entity-to-Dim-Entity">temp.mtt_Stg_Entity_to_Dim_Entity</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Entity_to_Dim_Entity/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.mtt_Stg_Entity_to_Dim_Entity/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.mtt_Stg_Entity_to_Dim_Entity/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.mtt_Stg_Entity_to_Dim_Entity/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Entity_to_Dim_Entity/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Entity_to_Dim_Entity/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Entity_to_Dim_Entity/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Entity_to_Dim_Entity/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Entity_to_Dim_Entity/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.mtt_Stg_Entity_to_Dim_Entity/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.mtt_Stg_Entity_to_Dim_Entity/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Entity_to_Dim_Entity/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mtt_Stg_Entity_to_Dim_Entity/fault"
+                                  id="kh65xky8"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mtt_Stg_Entity_to_Dim_Entity/fault"
+                                  id="kh65xky9"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kh65xkus" targetId="kh65xkun" type="containerLink"/>
+                  </flow>
+                  <flow id="kh65xkuu">
+                     <eventContainer id="kh65xl0g">
+                        <service id="kh65xkzt">
+                           <title>mtt_STG_Currencies_to_Dim_Currencies</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mtt_STG_Currencies_to_Dim_Currencies</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">gUOhnnv4EQugnbtoKK6sa8</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mtt-STG-Currencies-to-Dim-Currencies">temp.mtt_STG_Currencies_to_Dim_Currencies</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.mtt_STG_Currencies_to_Dim_Currencies/output/Object_Name">Object Name</operation>
+                              <operation source="field"
+                                         to="temp.mtt_STG_Currencies_to_Dim_Currencies/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_STG_Currencies_to_Dim_Currencies/output/Log_Id">Log Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_STG_Currencies_to_Dim_Currencies/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_STG_Currencies_to_Dim_Currencies/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mtt_STG_Currencies_to_Dim_Currencies/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_STG_Currencies_to_Dim_Currencies/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_STG_Currencies_to_Dim_Currencies/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_STG_Currencies_to_Dim_Currencies/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_STG_Currencies_to_Dim_Currencies/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.mtt_STG_Currencies_to_Dim_Currencies/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.mtt_STG_Currencies_to_Dim_Currencies/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mtt_STG_Currencies_to_Dim_Currencies/fault"
+                                  id="kh65xl0e"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mtt_STG_Currencies_to_Dim_Currencies/fault"
+                                  id="kh65xl0f"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kh65xkuv" targetId="kh65xkun" type="containerLink"/>
+                  </flow>
+                  <flow id="kh65xkvc">
+                     <eventContainer id="kh65xl2m">
+                        <service id="kh65xl1z">
+                           <title>mtt_Stg_Dimensions_to_Dim_Account</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mtt_Stg_Dimensions_to_Dim_Account</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">8U5HM6WBHGreFaBXDf9Bm8</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mtt-Stg-Dimensions-to-Dim-Account">temp.mtt_Stg_Dimensions_to_Dim_Account</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Dimensions_to_Dim_Account/output/Object_Name">Object Name</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Dimensions_to_Dim_Account/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Dimensions_to_Dim_Account/output/Log_Id">Log Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Dimensions_to_Dim_Account/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Dimensions_to_Dim_Account/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Dimensions_to_Dim_Account/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Dimensions_to_Dim_Account/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Dimensions_to_Dim_Account/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Dimensions_to_Dim_Account/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Dimensions_to_Dim_Account/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Dimensions_to_Dim_Account/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Dimensions_to_Dim_Account/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mtt_Stg_Dimensions_to_Dim_Account/fault"
+                                  id="kh65xl2k"
+                                  interrupting="true"
+                                  name="error"/>
+                           <catch faultField="temp.mtt_Stg_Dimensions_to_Dim_Account/fault"
+                                  id="kh65xl2l"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kh65xkvd" targetId="kh65xkun" type="containerLink"/>
+                  </flow>
+                  <flow id="kh65xkvv">
+                     <eventContainer id="kh65xl4s">
+                        <service id="kh65xl45">
+                           <title>mtt_Stg_Dimensions_to_Dim_Department</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mtt_Stg_Dimensions_to_Dim_Department</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">iELoetxhNQ4ccNe4AUk2O9</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mtt-Stg-Dimensions-to-Dim-Department">temp.mtt_Stg_Dimensions_to_Dim_Department</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Dimensions_to_Dim_Department/output/Object_Name">Object Name</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Dimensions_to_Dim_Department/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Dimensions_to_Dim_Department/output/Log_Id">Log Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Dimensions_to_Dim_Department/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Dimensions_to_Dim_Department/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Dimensions_to_Dim_Department/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Dimensions_to_Dim_Department/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Dimensions_to_Dim_Department/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Dimensions_to_Dim_Department/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Dimensions_to_Dim_Department/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Dimensions_to_Dim_Department/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Dimensions_to_Dim_Department/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mtt_Stg_Dimensions_to_Dim_Department/fault"
+                                  id="kh65xl4q"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mtt_Stg_Dimensions_to_Dim_Department/fault"
+                                  id="kh65xl4r"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kh65xkvw" targetId="kh65xkun" type="containerLink"/>
+                  </flow>
+                  <flow id="kh65xkwf">
+                     <eventContainer id="kh65xl6y">
+                        <service id="kh65xl6b">
+                           <title>mct_Dim_Hierarchy</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mct_Dim_Hierarchy</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">3XTNNwwrMHMdkIwhqxcdGY</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mct-Dim-Hierarchy">temp.mct_Dim_Hierarchy</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.mct_Dim_Hierarchy/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.mct_Dim_Hierarchy/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.mct_Dim_Hierarchy/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.mct_Dim_Hierarchy/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.mct_Dim_Hierarchy/output/Task_Status">Task Status</operation>
+                              <operation source="field" to="temp.mct_Dim_Hierarchy/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field" to="temp.mct_Dim_Hierarchy/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field" to="temp.mct_Dim_Hierarchy/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field" to="temp.mct_Dim_Hierarchy/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.mct_Dim_Hierarchy/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.mct_Dim_Hierarchy/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.mct_Dim_Hierarchy/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mct_Dim_Hierarchy/fault"
+                                  id="kh65xl6w"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mct_Dim_Hierarchy/fault"
+                                  id="kh65xl6x"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kh65xkwg" targetId="kh65xkun" type="containerLink"/>
+                  </flow>
+                  <flow id="kh65xkx0">
+                     <eventContainer id="kh65xl94">
+                        <service id="kh65xl8h">
+                           <title>mtt_Stg_Chart_of_Account_to_Dim_COA</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mtt_Stg_Chart_of_Account_to_Dim_COA</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">dFoWw2evow0lMhCbzY6miA</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mtt-Stg-Chart-of-Account-to-Dim-COA">temp.mtt_Stg_Chart_of_Account_to_Dim_COA</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Chart_of_Account_to_Dim_COA/output/Object_Name">Object Name</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Chart_of_Account_to_Dim_COA/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Chart_of_Account_to_Dim_COA/output/Log_Id">Log Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Chart_of_Account_to_Dim_COA/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Chart_of_Account_to_Dim_COA/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Chart_of_Account_to_Dim_COA/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Chart_of_Account_to_Dim_COA/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Chart_of_Account_to_Dim_COA/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Chart_of_Account_to_Dim_COA/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Chart_of_Account_to_Dim_COA/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Chart_of_Account_to_Dim_COA/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Chart_of_Account_to_Dim_COA/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mtt_Stg_Chart_of_Account_to_Dim_COA/fault"
+                                  id="kh65xl92"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mtt_Stg_Chart_of_Account_to_Dim_COA/fault"
+                                  id="kh65xl93"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kh65xkx1" targetId="kh65xkun" type="containerLink"/>
+                  </flow>
+                  <link id="kh65xkuq" targetId="kh65xkur" type="containerLink"/>
+                  <link id="kh65xkut" targetId="kh65xkuu" type="containerLink"/>
+                  <link id="kh65xkvb" targetId="kh65xkvc" type="containerLink"/>
+                  <link id="kh65xkvu" targetId="kh65xkvv" type="containerLink"/>
+                  <link id="kh65xkwe" targetId="kh65xkwf" type="containerLink"/>
+                  <link id="kh65xkwz" targetId="kh65xkx0" type="containerLink"/>
+                  <link id="kh65xld6" targetId="kh65xldu"/>
+               </container>
+               <eventContainer id="kh65xldu">
+                  <service id="kh65xld5">
+                     <title>mtt_Finance_FactGLJournals_Load</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mtt_Finance_FactGLJournals_Load</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">8UFL8KSKWyykBkhMGILOKN</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mtt-Finance-FactGLJournals-Load">temp.mtt_Finance_FactGLJournals_Load</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field"
+                                   to="temp.mtt_Finance_FactGLJournals_Load/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.mtt_Finance_FactGLJournals_Load/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.mtt_Finance_FactGLJournals_Load/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.mtt_Finance_FactGLJournals_Load/output/Task_Id">Task Id</operation>
+                        <operation source="field"
+                                   to="temp.mtt_Finance_FactGLJournals_Load/output/Task_Status">Task Status</operation>
+                        <operation source="field"
+                                   to="temp.mtt_Finance_FactGLJournals_Load/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.mtt_Finance_FactGLJournals_Load/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.mtt_Finance_FactGLJournals_Load/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.mtt_Finance_FactGLJournals_Load/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.mtt_Finance_FactGLJournals_Load/output/Start_Time">Start Time</operation>
+                        <operation source="field"
+                                   to="temp.mtt_Finance_FactGLJournals_Load/output/End_Time">End Time</operation>
+                        <operation source="field"
+                                   to="temp.mtt_Finance_FactGLJournals_Load/output/Error_Message">Error Message</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="kh65xlfe" targetId="kh65xlg2"/>
+                  <events>
+                     <catch faultField="temp.mtt_Finance_FactGLJournals_Load/fault"
+                            id="kh65xlds"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.mtt_Finance_FactGLJournals_Load/fault"
+                            id="kh65xldt"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="kh65xlg2">
+                  <service id="kh65xlfd">
+                     <title>mtt_BB_GL_Journals_Aggregation_UNION</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mtt_BB_GL_Journals_Aggregation_UNION</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">lwqNjHvuHkybcI1QgXTDAu</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mtt-BB-GL-Journals-Aggregation-UNION">temp.mtt_BB_GL_Journals_Aggregation_UNION</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field"
+                                   to="temp.mtt_BB_GL_Journals_Aggregation_UNION/output/Object_Name">Object Name</operation>
+                        <operation source="field"
+                                   to="temp.mtt_BB_GL_Journals_Aggregation_UNION/output/Run_Id">Run Id</operation>
+                        <operation source="field"
+                                   to="temp.mtt_BB_GL_Journals_Aggregation_UNION/output/Log_Id">Log Id</operation>
+                        <operation source="field"
+                                   to="temp.mtt_BB_GL_Journals_Aggregation_UNION/output/Task_Id">Task Id</operation>
+                        <operation source="field"
+                                   to="temp.mtt_BB_GL_Journals_Aggregation_UNION/output/Task_Status">Task Status</operation>
+                        <operation source="field"
+                                   to="temp.mtt_BB_GL_Journals_Aggregation_UNION/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.mtt_BB_GL_Journals_Aggregation_UNION/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.mtt_BB_GL_Journals_Aggregation_UNION/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.mtt_BB_GL_Journals_Aggregation_UNION/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.mtt_BB_GL_Journals_Aggregation_UNION/output/Start_Time">Start Time</operation>
+                        <operation source="field"
+                                   to="temp.mtt_BB_GL_Journals_Aggregation_UNION/output/End_Time">End Time</operation>
+                        <operation source="field"
+                                   to="temp.mtt_BB_GL_Journals_Aggregation_UNION/output/Error_Message">Error Message</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="kh65xlhm" targetId="kh65xlia"/>
+                  <events>
+                     <catch faultField="temp.mtt_BB_GL_Journals_Aggregation_UNION/fault"
+                            id="kh65xlg0"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.mtt_BB_GL_Journals_Aggregation_UNION/fault"
+                            id="kh65xlg1"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="kh65xlia">
+                  <service id="kh65xlhl">
+                     <title>mtt_PnL_GL_Journals_Aggregation_new</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mtt_PnL_GL_Journals_Aggregation_new</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">826drg1Db8GetCHz6TIP8z</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mtt-PnL-GL-Journals-Aggregation-new">temp.mtt_PnL_GL_Journals_Aggregation_new</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field"
+                                   to="temp.mtt_PnL_GL_Journals_Aggregation_new/output/Object_Name">Object Name</operation>
+                        <operation source="field"
+                                   to="temp.mtt_PnL_GL_Journals_Aggregation_new/output/Run_Id">Run Id</operation>
+                        <operation source="field"
+                                   to="temp.mtt_PnL_GL_Journals_Aggregation_new/output/Log_Id">Log Id</operation>
+                        <operation source="field"
+                                   to="temp.mtt_PnL_GL_Journals_Aggregation_new/output/Task_Id">Task Id</operation>
+                        <operation source="field"
+                                   to="temp.mtt_PnL_GL_Journals_Aggregation_new/output/Task_Status">Task Status</operation>
+                        <operation source="field"
+                                   to="temp.mtt_PnL_GL_Journals_Aggregation_new/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.mtt_PnL_GL_Journals_Aggregation_new/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.mtt_PnL_GL_Journals_Aggregation_new/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.mtt_PnL_GL_Journals_Aggregation_new/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.mtt_PnL_GL_Journals_Aggregation_new/output/Start_Time">Start Time</operation>
+                        <operation source="field"
+                                   to="temp.mtt_PnL_GL_Journals_Aggregation_new/output/End_Time">End Time</operation>
+                        <operation source="field"
+                                   to="temp.mtt_PnL_GL_Journals_Aggregation_new/output/Error_Message">Error Message</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="kh65xlju" targetId="kh65xlki"/>
+                  <events>
+                     <catch faultField="temp.mtt_PnL_GL_Journals_Aggregation_new/fault"
+                            id="kh65xli8"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.mtt_PnL_GL_Journals_Aggregation_new/fault"
+                            id="kh65xli9"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="kh65xlki">
+                  <service id="kh65xljt">
+                     <title>mtt_Finance_Fact_Plan_Load</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mtt_Finance_Fact_Plan_Load</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">5Rd3MTlNsqLfghhBWYp0YT</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mtt-Finance-Fact-Plan-Load">temp.mtt_Finance_Fact_Plan_Load</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.mtt_Finance_Fact_Plan_Load/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.mtt_Finance_Fact_Plan_Load/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.mtt_Finance_Fact_Plan_Load/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.mtt_Finance_Fact_Plan_Load/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.mtt_Finance_Fact_Plan_Load/output/Task_Status">Task Status</operation>
+                        <operation source="field"
+                                   to="temp.mtt_Finance_Fact_Plan_Load/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.mtt_Finance_Fact_Plan_Load/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.mtt_Finance_Fact_Plan_Load/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.mtt_Finance_Fact_Plan_Load/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.mtt_Finance_Fact_Plan_Load/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.mtt_Finance_Fact_Plan_Load/output/End_Time">End Time</operation>
+                        <operation source="field"
+                                   to="temp.mtt_Finance_Fact_Plan_Load/output/Error_Message">Error Message</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="kh65xljv" targetId="c"/>
+                  <events>
+                     <catch faultField="temp.mtt_Finance_Fact_Plan_Load/fault"
+                            id="kh65xlkg"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.mtt_Finance_Fact_Plan_Load/fault"
+                            id="kh65xlkh"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mtt-Netsuite-Accounts-to-Landing-DB-Accounts"
+                              isByCopy="true"
+                              name="mtt-Netsuite-Accounts-to-Landing-DB-Accounts">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mtt-Netsuite-Accountingperiods-to-Landing-DB-Accountingperiods"
+                              isByCopy="true"
+                              name="mtt-Netsuite-Accountingperiods-to-Landing-DB-Accountingperiods">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mtt-Netsuite-Currencies-to-Landing-DB-Currencies"
+                              isByCopy="true"
+                              name="mtt-Netsuite-Currencies-to-Landing-DB-Currencies">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mtt-Netsuite-Departments-to-Landing-DB-Departments"
+                              isByCopy="true"
+                              name="mtt-Netsuite-Departments-to-Landing-DB-Departments">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mtt-Netsuite-Subsidiaries-to-Landing-DB-Subsidiaries"
+                              isByCopy="true"
+                              name="mtt-Netsuite-Subsidiaries-to-Landing-DB-Subsidiaries">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mtt-Netsuite-Transaction-Lines-to-Landing-DB-Transaction-Lines"
+                              isByCopy="true"
+                              name="mtt-Netsuite-Transaction-Lines-to-Landing-DB-Transaction-Lines">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mtt-Netsuite-Transactions-to-Landing-DB-Transactions"
+                              isByCopy="true"
+                              name="mtt-Netsuite-Transactions-to-Landing-DB-Transactions">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mtt-Landing-to-STG-COA"
+                              isByCopy="true"
+                              name="mtt-Landing-to-STG-COA">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mtt-Landing-to-STG-ENTITY"
+                              isByCopy="true"
+                              name="mtt-Landing-to-STG-ENTITY">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mtt-Landing-to-STG-GL-TRANSACTION"
+                              isByCopy="true"
+                              name="mtt-Landing-to-STG-GL-TRANSACTION">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mtt-Landing-Currencies-To-Stage-Currencies"
+                              isByCopy="true"
+                              name="mtt-Landing-Currencies-To-Stage-Currencies">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mtt-Landing-Accounts-to-STG-DIMENSIONS"
+                              isByCopy="true"
+                              name="mtt-Landing-Accounts-to-STG-DIMENSIONS">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mtt-Landing-Departments-to-STG-DIMENSIONS"
+                              isByCopy="true"
+                              name="mtt-Landing-Departments-to-STG-DIMENSIONS">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mtt-Stg-Entity-to-Dim-Entity"
+                              isByCopy="true"
+                              name="mtt-Stg-Entity-to-Dim-Entity">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mtt-STG-Currencies-to-Dim-Currencies"
+                              isByCopy="true"
+                              name="mtt-STG-Currencies-to-Dim-Currencies">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mtt-Stg-Dimensions-to-Dim-Account"
+                              isByCopy="true"
+                              name="mtt-Stg-Dimensions-to-Dim-Account">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mtt-Stg-Dimensions-to-Dim-Department"
+                              isByCopy="true"
+                              name="mtt-Stg-Dimensions-to-Dim-Department">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-Dim-Hierarchy"
+                              isByCopy="true"
+                              name="mct-Dim-Hierarchy">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mtt-Stg-Chart-of-Account-to-Dim-COA"
+                              isByCopy="true"
+                              name="mtt-Stg-Chart-of-Account-to-Dim-COA">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mtt-Finance-FactGLJournals-Load"
+                              isByCopy="true"
+                              name="mtt-Finance-FactGLJournals-Load">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mtt-BB-GL-Journals-Aggregation-UNION"
+                              isByCopy="true"
+                              name="mtt-BB-GL-Journals-Aggregation-UNION">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mtt-PnL-GL-Journals-Aggregation-new"
+                              isByCopy="true"
+                              name="mtt-PnL-GL-Journals-Aggregation-new">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mtt-Finance-Fact-Plan-Load"
+                              isByCopy="true"
+                              name="mtt-Finance-Fact-Plan-Load">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>5MGGHLPnO5JjePqSzzO7GE</types1:GUID>
+      <types1:DisplayName>tf_InfoFiscus</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-11-26T08:40:27.954Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

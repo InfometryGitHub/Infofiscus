@@ -1,0 +1,284 @@
+{
+  "objectInfo" : {
+    "id" : "6LEXUArIg1MgJCWsnGy4w3",
+    "name" : "tf_SupplyChain",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "4xtjqbdpIO3M4Ww-gt-5125082-2020-11-06T12:16:17.902Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "0qJgjQZVb8jdV1vLB4gCco",
+    "name" : "mtt_Netsuite_Transaction_links_to_Landing_Transaction_links",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01037X0Z0000000003E5"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Naveen/0-SupplyChain"
+  }, {
+    "id" : "j3T25YYOIQhc8hoieSF7MS",
+    "name" : "mtt_Netsuite_Item_Subsidiary_Map_to_Landing_Item_Subsidiary_Map",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01037X0Z0000000003E9"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Naveen/0-SupplyChain"
+  }, {
+    "id" : "joglrGYaoCOh2KC3H4DqQZ",
+    "name" : "mtt_Landing to_Dim_Account_Booking",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01037X0Z0000000003FH"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Naveen/0-SupplyChain"
+  }, {
+    "id" : "aoaxlGYJKHZehctiiAmKAZ",
+    "name" : "mtt_Netsuite_Itemvendormap_to_Landing_Itemvendormap",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01037X0Z0000000003E7"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Naveen/0-SupplyChain"
+  }, {
+    "id" : "3XRWpCZWsu7d1xXxzSjSwm",
+    "name" : "mtt_View_Product_to_Dim_Product_Booking",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01037X0Z0000000003FK"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Naveen/0-SupplyChain"
+  }, {
+    "id" : "hZMVJZc1coyg7JQeuj4YIJ",
+    "name" : "mtt_View_to_Dim_Sales_Order_Booking",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01037X0Z0000000003FN"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Naveen/0-SupplyChain"
+  }, {
+    "id" : "0cYN1JZnlgjgFuKv53GpMx",
+    "name" : "mtt_NetSuite_Items_to_Landing_Items",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01037X0Z0000000003E1"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Naveen/0-SupplyChain"
+  }, {
+    "id" : "7VquYWblqQob9uW4Q2tSQ3",
+    "name" : "mtt_FACT_SHIPMENT_Snowflake",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01037X0Z0000000003FP"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Naveen/0-SupplyChain"
+  }, {
+    "id" : "aQYtOAMMzOreLEe3YoJ26x",
+    "name" : "mtt_Netsuite_Customers_to_Landing_Customers",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01037X0Z0000000003E4"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Naveen/0-SupplyChain"
+  }, {
+    "id" : "11bbCyfng0xhHba11pa8we",
+    "name" : "mtt_View_Shipment_to_Dim_Sales_Order_Shipment",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01037X0Z0000000003FJ"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Naveen/0-SupplyChain"
+  }, {
+    "id" : "9N274gYvvQvdeStctrD165",
+    "name" : "mtt_FACT_BOOKINGS_Snowflake",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01037X0Z0000000003FQ"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Naveen/0-SupplyChain"
+  }, {
+    "id" : "lbSDiwPg0E4hV39gWym2Yk",
+    "name" : "mtt_View_Customer_to_Dim_Customer",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01037X0Z0000000003FI"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Naveen/0-SupplyChain"
+  }, {
+    "id" : "9hrEdlAff2idr6tuGovhuS",
+    "name" : "mtt_Netsuite_Vendors_to_Landing_Vendors",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01037X0Z0000000003E8"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Naveen/0-SupplyChain"
+  } ]
+}
