@@ -1,0 +1,47 @@
+{
+  "objectInfo" : {
+    "id" : "8j63vQ7zFsfdpfRRYQpEMi",
+    "name" : "m_DummyFortesting",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01037X170000000002TY"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : null,
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "objectRefs" : [ {
+    "id" : "kY3p3Y3j28ahWZyJeSMle6",
+    "name" : "FF_C_Informatica_FlatFiles",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01037X0B0000000000NO"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "C:\\Informatica\\FlatFiles",
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  } ]
+}
