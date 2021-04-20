@@ -1,0 +1,254 @@
+{
+  "objectInfo" : {
+    "id" : "68MR8A5GL8SkI66f4XdJiY",
+    "name" : "tf_InfoFiscus _finance_ landing",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "rGC7snSDg8SOlA1-gt-15737235-2021-03-18T10:39:27.274Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "9e1CfBTpXY5lxNE9OhyKub",
+    "name" : "mct_NetSuite_Currencies_Extract",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01037X0Z0000000004JS"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/PARAMETER_INFOFISCUS/Finance_Analytics_Parameter"
+  }, {
+    "id" : "3kURgy2vdhYeWcVEupBmyX",
+    "name" : "mct_Netsuite_Subsidary_Extract",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01037X0Z0000000004JY"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/PARAMETER_INFOFISCUS/Finance_Analytics_Parameter"
+  }, {
+    "id" : "l9Okt1c2nSuiCtcqwEMwoE",
+    "name" : "mct_Netsuite_Vendors_Extract",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01037X0Z0000000004JL"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/PARAMETER_INFOFISCUS/Finance_Analytics_Parameter"
+  }, {
+    "id" : "4tXyFQ97ztuc4dVuBpjS2L",
+    "name" : "mct_NetSuite_Departments_Extract",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01037X0Z0000000004JM"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/PARAMETER_INFOFISCUS/Finance_Analytics_Parameter"
+  }, {
+    "id" : "5RfSq4WXqCTjvQMk7Jfz6X",
+    "name" : "mct_netsuite_transaction_Extract",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01037X0Z0000000004JH"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/PARAMETER_INFOFISCUS/Finance_Analytics_Parameter"
+  }, {
+    "id" : "9e1vjpKQmQKg6TrmeH20GK",
+    "name" : "mct_NetSuite_Items_Extract",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01037X0Z0000000004JQ"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/PARAMETER_INFOFISCUS/Finance_Analytics_Parameter"
+  }, {
+    "id" : "3Is0X4lKjqLi7fDThk1iYS",
+    "name" : "m_Netsuite_Transaction_Lines_Extract",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01037X0Z0000000004KB"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/PARAMETER_INFOFISCUS/Finance_Analytics_Parameter"
+  }, {
+    "id" : "00wcJ1G8oj9j5pHGMApF48",
+    "name" : "mct_customer_Extract",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01037X0Z0000000004ND"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/PARAMETER_INFOFISCUS/Finance_Analytics_Parameter"
+  }, {
+    "id" : "eSBtIcES90JlarMLDG8n4q",
+    "name" : "mct_NetSuite_Account_Extract",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01037X0Z0000000004KY"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/PARAMETER_INFOFISCUS/Finance_Analytics_Parameter"
+  }, {
+    "id" : "fQQ72wl1u6IlXGnNGQO4IE",
+    "name" : "mct_NetSuite_Accountingperiods_Extract",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01037X0Z0000000004JX"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/PARAMETER_INFOFISCUS/Finance_Analytics_Parameter"
+  } ]
+}

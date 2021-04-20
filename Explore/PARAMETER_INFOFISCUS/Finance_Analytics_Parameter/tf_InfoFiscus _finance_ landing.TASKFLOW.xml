@@ -1,0 +1,764 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>rGC7snSDg8SOlA1-gt-15737235-2021-03-18T10:39:27.274Z::tf.xml</types1:EntryId>
+      <types1:Name>tf_InfoFiscus_finance_landing-2</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>BIJILDJ</types1:CreatedBy>
+      <types1:CreationDate>2021-03-18T10:39:27Z</types1:CreationDate>
+      <types1:ModifiedBy>BIJILDJ</types1:ModifiedBy>
+      <types1:ModificationDate>2021-04-06T05:32:05Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>AISHWARYAK</types1:PublishedBy>
+      <types1:PublicationDate>2021-04-15T12:58:17Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.tf_InfoFiscus_finance_landing-2/tf_InfoFiscus_finance_landing-2.tf.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="tf_InfoFiscus _finance_ landing"
+                   name="tf_InfoFiscus_finance_landing-2"
+                   overrideAPIName="false">
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="m_NetSuite_Account_Extract" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mct-NetSuite-Account-Extract</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="mct_NetSuite_Accountingperiods_Extract"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mct-NetSuite-Accountingperiods-Extract</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="mct_NetSuite_Currencies_Extract"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mct-NetSuite-Currencies-Extract</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="mct_NetSuite_Departments_Extract"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mct-NetSuite-Departments-Extract</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="mct_Netsuite_Subsidary_Extract"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mct-Netsuite-Subsidary-Extract</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="m_Netsuite_Transaction_Lines_Extract"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:m-Netsuite-Transaction-Lines-Extract</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="mct_netsuite_transaction_Extract"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mct-netsuite-transaction-Extract</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="mct_NetSuite_Items_Extract" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mct-NetSuite-Items-Extract</option>
+                  </options>
+               </field>
+               <field description="" name="mct_Netsuite_Vendors_Extract" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mct-Netsuite-Vendors-Extract</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="mct_Netsuite_customer_Extract"
+                      type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mct-customer-Extract</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="kh65xk95" targetId="kh65xk94"/>
+               </start>
+               <container id="kh65xk94" type="parallel">
+                  <title>Landing</title>
+                  <flow id="kh65xk98">
+                     <eventContainer id="kh65xkab">
+                        <service id="kh65xka2">
+                           <title>m_NetSuite_Account_Extract</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mct_NetSuite_Account_Extract</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">eSBtIcES90JlarMLDG8n4q</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mct-NetSuite-Account-Extract">temp.m_NetSuite_Account_Extract</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.m_NetSuite_Account_Extract/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.m_NetSuite_Account_Extract/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.m_NetSuite_Account_Extract/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.m_NetSuite_Account_Extract/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.m_NetSuite_Account_Extract/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.m_NetSuite_Account_Extract/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.m_NetSuite_Account_Extract/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.m_NetSuite_Account_Extract/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.m_NetSuite_Account_Extract/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.m_NetSuite_Account_Extract/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.m_NetSuite_Account_Extract/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.m_NetSuite_Account_Extract/output/Error_Message">Error Message</operation>
+                              <operation source="field" to="temp.m_NetSuite_Account_Extract/inout/RunDate">RunDate</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.m_NetSuite_Account_Extract/fault"
+                                  id="kh65xka9"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.m_NetSuite_Account_Extract/fault"
+                                  id="kh65xkaa"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kh65xk99" targetId="kh65xk94" type="containerLink"/>
+                  </flow>
+                  <flow id="kh65xk9b">
+                     <eventContainer id="kh65xkbp">
+                        <service id="kh65xkb2">
+                           <title>mct_NetSuite_Accountingperiods_Extract</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mct_NetSuite_Accountingperiods_Extract</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">fQQ72wl1u6IlXGnNGQO4IE</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mct-NetSuite-Accountingperiods-Extract">temp.mct_NetSuite_Accountingperiods_Extract</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.mct_NetSuite_Accountingperiods_Extract/output/Object_Name">Object Name</operation>
+                              <operation source="field"
+                                         to="temp.mct_NetSuite_Accountingperiods_Extract/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.mct_NetSuite_Accountingperiods_Extract/output/Log_Id">Log Id</operation>
+                              <operation source="field"
+                                         to="temp.mct_NetSuite_Accountingperiods_Extract/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.mct_NetSuite_Accountingperiods_Extract/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mct_NetSuite_Accountingperiods_Extract/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_NetSuite_Accountingperiods_Extract/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_NetSuite_Accountingperiods_Extract/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_NetSuite_Accountingperiods_Extract/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_NetSuite_Accountingperiods_Extract/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.mct_NetSuite_Accountingperiods_Extract/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.mct_NetSuite_Accountingperiods_Extract/output/Error_Message">Error Message</operation>
+                              <operation source="field"
+                                         to="temp.mct_NetSuite_Accountingperiods_Extract/inout/RunDate">RunDate</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mct_NetSuite_Accountingperiods_Extract/fault"
+                                  id="kh65xkbn"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mct_NetSuite_Accountingperiods_Extract/fault"
+                                  id="kh65xkbo"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kh65xk9c" targetId="kh65xk94" type="containerLink"/>
+                  </flow>
+                  <flow id="kh65xk9g">
+                     <eventContainer id="kh65xkcb">
+                        <service id="kh65xkc2">
+                           <title>mct_NetSuite_Currencies_Extract</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mct_NetSuite_Currencies_Extract</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">9e1CfBTpXY5lxNE9OhyKub</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mct-NetSuite-Currencies-Extract">temp.mct_NetSuite_Currencies_Extract</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.mct_NetSuite_Currencies_Extract/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.mct_NetSuite_Currencies_Extract/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.mct_NetSuite_Currencies_Extract/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.mct_NetSuite_Currencies_Extract/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.mct_NetSuite_Currencies_Extract/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mct_NetSuite_Currencies_Extract/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_NetSuite_Currencies_Extract/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_NetSuite_Currencies_Extract/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_NetSuite_Currencies_Extract/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_NetSuite_Currencies_Extract/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.mct_NetSuite_Currencies_Extract/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.mct_NetSuite_Currencies_Extract/output/Error_Message">Error Message</operation>
+                              <operation source="field" to="temp.mct_NetSuite_Currencies_Extract/inout/RunDate">RunDate</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mct_NetSuite_Currencies_Extract/fault"
+                                  id="kh65xkc9"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mct_NetSuite_Currencies_Extract/fault"
+                                  id="kh65xkca"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kh65xk9h" targetId="kh65xk94" type="containerLink"/>
+                  </flow>
+                  <flow id="kh65xk9m">
+                     <eventContainer id="kh65xkdb">
+                        <service id="kh65xkd2">
+                           <title>mct_NetSuite_Departments_Extract</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mct_NetSuite_Departments_Extract</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">4tXyFQ97ztuc4dVuBpjS2L</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mct-NetSuite-Departments-Extract">temp.mct_NetSuite_Departments_Extract</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.mct_NetSuite_Departments_Extract/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.mct_NetSuite_Departments_Extract/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.mct_NetSuite_Departments_Extract/output/Log_Id">Log Id</operation>
+                              <operation source="field"
+                                         to="temp.mct_NetSuite_Departments_Extract/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.mct_NetSuite_Departments_Extract/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mct_NetSuite_Departments_Extract/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_NetSuite_Departments_Extract/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_NetSuite_Departments_Extract/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_NetSuite_Departments_Extract/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_NetSuite_Departments_Extract/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.mct_NetSuite_Departments_Extract/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.mct_NetSuite_Departments_Extract/output/Error_Message">Error Message</operation>
+                              <operation source="field" to="temp.mct_NetSuite_Departments_Extract/inout/RunDate">RunDate</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mct_NetSuite_Departments_Extract/fault"
+                                  id="kh65xkd9"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mct_NetSuite_Departments_Extract/fault"
+                                  id="kh65xkda"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kh65xk9n" targetId="kh65xk94" type="containerLink"/>
+                  </flow>
+                  <flow id="kh65xk9t">
+                     <eventContainer id="kh65xkeb">
+                        <service id="kh65xke2">
+                           <title>mct_Netsuite_Subsidary_Extract</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mct_Netsuite_Subsidary_Extract</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">3kURgy2vdhYeWcVEupBmyX</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mct-Netsuite-Subsidary-Extract">temp.mct_Netsuite_Subsidary_Extract</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput/>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mct_Netsuite_Subsidary_Extract/fault"
+                                  id="kh65xke9"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mct_Netsuite_Subsidary_Extract/fault"
+                                  id="kh65xkea"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kh65xk9u" targetId="kh65xk94" type="containerLink"/>
+                  </flow>
+                  <flow id="kh65xkf1">
+                     <eventContainer id="kh65xkfw">
+                        <service id="kh65xkfl">
+                           <title>m_Netsuite_Transaction_Lines_Extract</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">m_Netsuite_Transaction_Lines_Extract</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">3Is0X4lKjqLi7fDThk1iYS</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="m-Netsuite-Transaction-Lines-Extract">temp.m_Netsuite_Transaction_Lines_Extract</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput/>
+                        </service>
+                        <events>
+                           <catch faultField="temp.m_Netsuite_Transaction_Lines_Extract/fault"
+                                  id="kh65xkfu"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.m_Netsuite_Transaction_Lines_Extract/fault"
+                                  id="kh65xkfv"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kh65xkf2" targetId="kh65xk94" type="containerLink"/>
+                  </flow>
+                  <flow id="kh65xkfa">
+                     <eventContainer id="kh65xkh2">
+                        <service id="kh65xkgr">
+                           <title>mct_netsuite_transaction_Extract</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mct_netsuite_transaction_Extract</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">5RfSq4WXqCTjvQMk7Jfz6X</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mct-netsuite-transaction-Extract">temp.mct_netsuite_transaction_Extract</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput/>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mct_netsuite_transaction_Extract/fault"
+                                  id="kh65xkh0"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mct_netsuite_transaction_Extract/fault"
+                                  id="kh65xkh1"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kh65xkfb" targetId="kh65xk94" type="containerLink"/>
+                  </flow>
+                  <flow id="kn4kywzx">
+                     <eventContainer id="kn4kyx13">
+                        <service id="kn4kyx09">
+                           <title>mct_NetSuite_Items_Extract</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mct_NetSuite_Items_Extract</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">9e1vjpKQmQKg6TrmeH20GK</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mct-NetSuite-Items-Extract">temp.mct_NetSuite_Items_Extract</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput/>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mct_NetSuite_Items_Extract/fault"
+                                  id="kn4kyx11"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mct_NetSuite_Items_Extract/fault"
+                                  id="kn4kyx12"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kn4kywzy" targetId="kh65xk94" type="containerLink"/>
+                  </flow>
+                  <flow id="kn4kyx1l">
+                     <eventContainer id="kn4kyx2t">
+                        <service id="kn4kyx1y">
+                           <title>mct_Netsuite_Vendors_Extract</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mct_Netsuite_Vendors_Extract</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">l9Okt1c2nSuiCtcqwEMwoE</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mct-Netsuite-Vendors-Extract">temp.mct_Netsuite_Vendors_Extract</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput/>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mct_Netsuite_Vendors_Extract/fault"
+                                  id="kn4kyx2r"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mct_Netsuite_Vendors_Extract/fault"
+                                  id="kn4kyx2s"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kn4kyx1m" targetId="kh65xk94" type="containerLink"/>
+                  </flow>
+                  <flow id="kn5l17vb">
+                     <eventContainer id="kn5l17wl">
+                        <service id="kn5l17vp">
+                           <title>mct_Netsuite_customer_Extract</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mct_customer_Extract</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">00wcJ1G8oj9j5pHGMApF48</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mct-customer-Extract">temp.mct_Netsuite_customer_Extract</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.mct_Netsuite_customer_Extract/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.mct_Netsuite_customer_Extract/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.mct_Netsuite_customer_Extract/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.mct_Netsuite_customer_Extract/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.mct_Netsuite_customer_Extract/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mct_Netsuite_customer_Extract/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Netsuite_customer_Extract/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Netsuite_customer_Extract/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Netsuite_customer_Extract/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Netsuite_customer_Extract/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.mct_Netsuite_customer_Extract/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.mct_Netsuite_customer_Extract/output/Error_Message">Error Message</operation>
+                              <operation source="field" to="temp.mct_Netsuite_customer_Extract/inout/RunDate">RunDate</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mct_Netsuite_customer_Extract/fault"
+                                  id="kn5l17wj"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mct_Netsuite_customer_Extract/fault"
+                                  id="kn5l17wk"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kn5l17vc" targetId="kh65xk94" type="containerLink"/>
+                  </flow>
+                  <link id="kh65xk97" targetId="kh65xk98" type="containerLink"/>
+                  <link id="kh65xk9a" targetId="kh65xk9b" type="containerLink"/>
+                  <link id="kh65xk9f" targetId="kh65xk9g" type="containerLink"/>
+                  <link id="kh65xk9l" targetId="kh65xk9m" type="containerLink"/>
+                  <link id="kh65xk9s" targetId="kh65xk9t" type="containerLink"/>
+                  <link id="kh65xkf0" targetId="kh65xkf1" type="containerLink"/>
+                  <link id="kh65xkf9" targetId="kh65xkfa" type="containerLink"/>
+                  <link id="kn4kywzw" targetId="kn4kywzx" type="containerLink"/>
+                  <link id="kn4kyx1k" targetId="kn4kyx1l" type="containerLink"/>
+                  <link id="kn5l17va" targetId="kn5l17vb" type="containerLink"/>
+                  <link id="km39ukyx" targetId="c"/>
+               </container>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-NetSuite-Account-Extract"
+                              isByCopy="true"
+                              name="mct-NetSuite-Account-Extract">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="InOut Parameters" name="inout" type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-NetSuite-Accountingperiods-Extract"
+                              isByCopy="true"
+                              name="mct-NetSuite-Accountingperiods-Extract">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters" name="input" type="reference"/>
+                     <field label="InOut Parameters" name="inout" type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-NetSuite-Currencies-Extract"
+                              isByCopy="true"
+                              name="mct-NetSuite-Currencies-Extract">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters" name="input" type="reference"/>
+                     <field label="InOut Parameters" name="inout" type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-NetSuite-Departments-Extract"
+                              isByCopy="true"
+                              name="mct-NetSuite-Departments-Extract">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters" name="input" type="reference"/>
+                     <field label="InOut Parameters" name="inout" type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-Netsuite-Subsidary-Extract"
+                              isByCopy="true"
+                              name="mct-Netsuite-Subsidary-Extract">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters" name="input" type="reference"/>
+                     <field label="InOut Parameters" name="inout" type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="m-Netsuite-Transaction-Lines-Extract"
+                              isByCopy="true"
+                              name="m-Netsuite-Transaction-Lines-Extract">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters" name="input" type="reference"/>
+                     <field label="InOut Parameters" name="inout" type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-netsuite-transaction-Extract"
+                              isByCopy="true"
+                              name="mct-netsuite-transaction-Extract">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters" name="input" type="reference"/>
+                     <field label="InOut Parameters" name="inout" type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-NetSuite-Items-Extract"
+                              isByCopy="true"
+                              name="mct-NetSuite-Items-Extract">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters" name="input" type="reference"/>
+                     <field label="InOut Parameters" name="inout" type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-Netsuite-Vendors-Extract"
+                              isByCopy="true"
+                              name="mct-Netsuite-Vendors-Extract">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters" name="input" type="reference"/>
+                     <field label="InOut Parameters" name="inout" type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-customer-Extract"
+                              isByCopy="true"
+                              name="mct-customer-Extract">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters" name="input" type="reference"/>
+                     <field label="InOut Parameters" name="inout" type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>68MR8A5GL8SkI66f4XdJiY</types1:GUID>
+      <types1:DisplayName>tf_InfoFiscus _finance_ landing</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2021-04-20T08:56:58.527Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

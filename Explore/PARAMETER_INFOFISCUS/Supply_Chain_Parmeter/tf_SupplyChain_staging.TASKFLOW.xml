@@ -1,0 +1,352 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>xhFdw8jIw8jIw8j-gt-15263285-2021-03-18T06:02:23.758Z::tf.xml</types1:EntryId>
+      <types1:Name>tf_SupplyChain_staging-2</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>BIJILDJ</types1:CreatedBy>
+      <types1:CreationDate>2021-03-18T06:02:24Z</types1:CreationDate>
+      <types1:ModifiedBy>BIJILDJ</types1:ModifiedBy>
+      <types1:ModificationDate>2021-04-06T09:34:01Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>AISHWARYAK</types1:PublishedBy>
+      <types1:PublicationDate>2021-04-09T14:22:40Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.tf_SupplyChain_staging-2/tf_SupplyChain_staging-2.tf.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="tf_SupplyChain_staging"
+                   name="tf_SupplyChain_staging-2"
+                   overrideAPIName="false">
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description=""
+                      name="mct_stg_Transaction_lines_Extract"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mct-stg-Transaction-lines-Extract</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="mct_Stg_Booking_Extract" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mct-Stg-Booking-Extract</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="mct_Stg_transaction_link_Extract"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mct-Stg-transaction-link-Extract</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="mct_Stg_customers_Extract" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mct-Stg-customers-Extract</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="mct_Stg_product_Extract" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mct-Stg-product-Extract</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="mct_Stg_Accounts_Extract" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mct-Stg-Accounts-Extract</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="mct_Stg_Shipment_Extract" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mct-Stg-Shipment-Extract</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="klukakyw" targetId="kkqf3rjl"/>
+               </start>
+               <container id="kkqf3rjl" type="parallel">
+                  <title>Staging</title>
+                  <flow id="kkqf3rjp">
+                     <eventContainer id="kkqf3rqt">
+                        <service id="kkqf3rkm">
+                           <title>mct_stg_Transaction_lines_Extract</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mct_stg_Transaction_lines_Extract</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">1re2FmMZEwbgsCs87N6x6E</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mct-stg-Transaction-lines-Extract">temp.mct_stg_Transaction_lines_Extract</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput/>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mct_stg_Transaction_lines_Extract/fault"
+                                  id="kkqf3rqr"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mct_stg_Transaction_lines_Extract/fault"
+                                  id="kkqf3rqs"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kkqf3rjq" targetId="kkqf3rjl" type="containerLink"/>
+                  </flow>
+                  <flow id="kkqf3rjs">
+                     <eventContainer id="kkqf3rly">
+                        <service id="kkqf3rl3">
+                           <title>mct_Stg_Booking_Extract</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mct_Stg_Booking_Extract</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">93kdjBsoNY6lIOZU5uf2kT</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mct-Stg-Booking-Extract">temp.mct_Stg_Booking_Extract</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput/>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mct_Stg_Booking_Extract/fault"
+                                  id="kkqf3rlw"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mct_Stg_Booking_Extract/fault"
+                                  id="kkqf3rlx"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kkqf3rjt" targetId="kkqf3rjl" type="containerLink"/>
+                  </flow>
+                  <flow id="kkqf3rnt">
+                     <eventContainer id="kkqf3rur">
+                        <service id="kkqf3rtq">
+                           <title>mct_Stg_transaction_link_Extract</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mct_Stg_transaction_link_Extract</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">4dBp20EP3D4iKBT5pdC2CW</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mct-Stg-transaction-link-Extract">temp.mct_Stg_transaction_link_Extract</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput/>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mct_Stg_transaction_link_Extract/fault"
+                                  id="kkqf3rup"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mct_Stg_transaction_link_Extract/fault"
+                                  id="kkqf3ruq"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kkqf3rnu" targetId="kkqf3rjl" type="containerLink"/>
+                  </flow>
+                  <flow id="kkqf3roa">
+                     <eventContainer id="kkqf3rxp">
+                        <service id="kkqf3rwq">
+                           <title>mct_Stg_customers_Extract</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mct_Stg_customers_Extract</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">d4jcTzp1A4lbmmXlyeCKeP</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mct-Stg-customers-Extract">temp.mct_Stg_customers_Extract</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput/>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mct_Stg_customers_Extract/fault"
+                                  id="kkqf3rxn"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mct_Stg_customers_Extract/fault"
+                                  id="kkqf3rxo"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kkqf3rob" targetId="kkqf3rjl" type="containerLink"/>
+                  </flow>
+                  <flow id="kkqf3ros">
+                     <eventContainer id="kkqf3s0n">
+                        <service id="kkqf3rzo">
+                           <title>mct_Stg_product_Extract</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mct_Stg_product_Extract</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">1a4F2WSUviEk5tJx5ovvEy</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mct-Stg-product-Extract">temp.mct_Stg_product_Extract</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput/>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mct_Stg_product_Extract/fault"
+                                  id="kkqf3s0l"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mct_Stg_product_Extract/fault"
+                                  id="kkqf3s0m"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kkqf3rot" targetId="kkqf3rjl" type="containerLink"/>
+                  </flow>
+                  <flow id="kkqf3rpb">
+                     <eventContainer id="kkqf3s42">
+                        <service id="kkqf3s2m">
+                           <title>mct_Stg_Accounts_Extract</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mct_Stg_Accounts_Extract</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">biA8BPJ33iAlm3DyCw1Am6</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mct-Stg-Accounts-Extract">temp.mct_Stg_Accounts_Extract</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput/>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mct_Stg_Accounts_Extract/fault"
+                                  id="kkqf3s40"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mct_Stg_Accounts_Extract/fault"
+                                  id="kkqf3s41"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kkqf3rpc" targetId="kkqf3rjl" type="containerLink"/>
+                  </flow>
+                  <flow id="kkqf3s60">
+                     <eventContainer id="kkqf3s84">
+                        <service id="kkqf3s74">
+                           <title>mct_Stg_Shipment_Extract</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mct_Stg_Shipment_Extract</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">5Xyz1ckQ5F8dCkGyJDzl2N</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mct-Stg-Shipment-Extract">temp.mct_Stg_Shipment_Extract</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput/>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mct_Stg_Shipment_Extract/fault"
+                                  id="kkqf3s82"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mct_Stg_Shipment_Extract/fault"
+                                  id="kkqf3s83"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kkqf3s61" targetId="kkqf3rjl" type="containerLink"/>
+                  </flow>
+                  <link id="kkqf3rjo" targetId="kkqf3rjp" type="containerLink"/>
+                  <link id="kkqf3rjr" targetId="kkqf3rjs" type="containerLink"/>
+                  <link id="kkqf3rns" targetId="kkqf3rnt" type="containerLink"/>
+                  <link id="kkqf3ro9" targetId="kkqf3roa" type="containerLink"/>
+                  <link id="kkqf3ror" targetId="kkqf3ros" type="containerLink"/>
+                  <link id="kkqf3rpa" targetId="kkqf3rpb" type="containerLink"/>
+                  <link id="kkqf3s5z" targetId="kkqf3s60" type="containerLink"/>
+                  <link id="klukal0f" targetId="c"/>
+               </container>
+               <end id="c"/>
+            </flow>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>4ywPayVqqRfhUGY5o6DLss</types1:GUID>
+      <types1:DisplayName>tf_SupplyChain_staging</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2021-04-20T08:56:58.513Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

@@ -1,0 +1,84 @@
+{
+  "objectInfo" : {
+    "id" : "1GCBI0cAXRti00bOxYMuC9",
+    "name" : "tf_finance_analytics_infofiscus",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "pnzYLnzYLnzYLnz-gt-22241029-2021-03-22T09:29:30.249Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "19nZnImYuTzcI25UU2RM4e",
+    "name" : "tf_InfoFiscus_finance_dim_fact -",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "9TCOshBnJKoJBUh-gt-15742067-2021-03-18T10:39:26.973Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/PARAMETER_INFOFISCUS/Finance_Analytics_Parameter"
+  }, {
+    "id" : "kYc3vMbeT0oiUlVvJBzwqJ",
+    "name" : "tf_InfoFiscus_finance_stage",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "RjoYsjqluQgabcj-gt-15643584-2021-03-18T10:39:26.69Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/PARAMETER_INFOFISCUS/Finance_Analytics_Parameter"
+  }, {
+    "id" : "68MR8A5GL8SkI66f4XdJiY",
+    "name" : "tf_InfoFiscus _finance_ landing",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "rGC7snSDg8SOlA1-gt-15737235-2021-03-18T10:39:27.274Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/PARAMETER_INFOFISCUS/Finance_Analytics_Parameter"
+  } ]
+}

@@ -1,0 +1,609 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>zTm8lnCmp6oIuQa-gt-15362651-2021-03-18T06:02:24.091Z::tf.xml</types1:EntryId>
+      <types1:Name>tf_SupplyChain_Dimension_fact-1</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>BIJILDJ</types1:CreatedBy>
+      <types1:CreationDate>2021-03-18T06:02:24Z</types1:CreationDate>
+      <types1:ModifiedBy>AISHWARYAK</types1:ModifiedBy>
+      <types1:ModificationDate>2021-04-09T11:31:01Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>AISHWARYAK</types1:PublishedBy>
+      <types1:PublicationDate>2021-04-09T14:22:40Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.tf_SupplyChain_Dimension_fact-1/tf_SupplyChain_Dimension_fact-1.tf.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="tf_SupplyChain_Dimension_fact"
+                   name="tf_SupplyChain_Dimension_fact-1"
+                   overrideAPIName="false">
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="mct_Dim_Customers_Dim_load" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mct-Dim-Customer-DimLoad</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="mct_Dim_Account_Booking_DimLoad"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mct-Dim-Account-Booking-DimLoad</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="mct_fact_booking_dialy_factLoad"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mct-fact-booking-dialy-factLoad</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="mct_fact_shipment_dialy_factLoad"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mct-fact-shipment-dialy-factLoad</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="mct_Dim_Product_Booking_DimLoad"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mct-Dim-Product-Booking-DimLoad</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="mct_Dim_Sales_Order_Shipment_Dimload"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mct-Dim-Sales-Order-Shipment-Dimload</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="mct_Dim_Sales_Order_Booking_Dimload"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mct-Dim-Sales-Order-Booking-Dimload</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="klvw8pay" targetId="kh6837ge"/>
+               </start>
+               <container id="kh6837ge" type="parallel">
+                  <title>Dim Load</title>
+                  <flow id="kh6837gi">
+                     <eventContainer id="kh6837ii">
+                        <service id="kh6837gx">
+                           <title>mct_Dim_Customers_Dim_load</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mct_Dim_Customer_DimLoad</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">7eHIKe248gBdGSe2xB5aw8</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mct-Dim-Customer-DimLoad">temp.mct_Dim_Customers_Dim_load</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.mct_Dim_Customers_Dim_load/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.mct_Dim_Customers_Dim_load/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.mct_Dim_Customers_Dim_load/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.mct_Dim_Customers_Dim_load/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.mct_Dim_Customers_Dim_load/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Customers_Dim_load/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Customers_Dim_load/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Customers_Dim_load/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Customers_Dim_load/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.mct_Dim_Customers_Dim_load/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.mct_Dim_Customers_Dim_load/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Customers_Dim_load/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mct_Dim_Customers_Dim_load/fault"
+                                  id="kh6837ig"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mct_Dim_Customers_Dim_load/fault"
+                                  id="kh6837ih"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kh6837gj" targetId="kh6837ge" type="containerLink"/>
+                  </flow>
+                  <flow id="kh6837gl">
+                     <eventContainer id="kh6837hl">
+                        <service id="kh6837h9">
+                           <title>mct_Dim_Account_Booking_DimLoad</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mct_Dim_Account_Booking_DimLoad</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">7I4zcUiOMJuhl6IM3lgZ2O</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mct-Dim-Account-Booking-DimLoad">temp.mct_Dim_Account_Booking_DimLoad</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Account_Booking_DimLoad/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.mct_Dim_Account_Booking_DimLoad/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.mct_Dim_Account_Booking_DimLoad/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.mct_Dim_Account_Booking_DimLoad/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Account_Booking_DimLoad/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Account_Booking_DimLoad/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Account_Booking_DimLoad/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Account_Booking_DimLoad/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Account_Booking_DimLoad/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Account_Booking_DimLoad/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Account_Booking_DimLoad/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Account_Booking_DimLoad/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mct_Dim_Account_Booking_DimLoad/fault"
+                                  id="kh6837hj"
+                                  interrupting="true"
+                                  name="error"/>
+                           <catch faultField="temp.mct_Dim_Account_Booking_DimLoad/fault"
+                                  id="kh6837hk"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kh6837gm" targetId="kh6837ge" type="containerLink"/>
+                  </flow>
+                  <flow id="kieg2jb3">
+                     <eventContainer id="kmkgqy2p">
+                        <service id="kieg2jco">
+                           <title>mct_Dim_Product_Booking_DimLoad</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mct_Dim_Product_Booking_DimLoad</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">k4dz2k1j2WBc1vrjRifQCo</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mct-Dim-Product-Booking-DimLoad">temp.mct_Dim_Product_Booking_DimLoad</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Product_Booking_DimLoad/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.mct_Dim_Product_Booking_DimLoad/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.mct_Dim_Product_Booking_DimLoad/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.mct_Dim_Product_Booking_DimLoad/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Product_Booking_DimLoad/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Product_Booking_DimLoad/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Product_Booking_DimLoad/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Product_Booking_DimLoad/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Product_Booking_DimLoad/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Product_Booking_DimLoad/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Product_Booking_DimLoad/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Product_Booking_DimLoad/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mct_Dim_Product_Booking_DimLoad/fault"
+                                  id="kmkgqy2n"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mct_Dim_Product_Booking_DimLoad/fault"
+                                  id="kmkgqy2o"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kieg2jb4" targetId="kh6837ge" type="containerLink"/>
+                  </flow>
+                  <flow id="kieg2jbh">
+                     <eventContainer id="kmkgqy3c">
+                        <service id="kieg2jdg">
+                           <title>mct_Dim_Sales_Order_Shipment_Dimload</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mct_Dim_Sales_Order_Shipment_Dimload</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">iySFnRbinqPfQVqlSG6cGf</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mct-Dim-Sales-Order-Shipment-Dimload">temp.mct_Dim_Sales_Order_Shipment_Dimload</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Sales_Order_Shipment_Dimload/output/Object_Name">Object Name</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Sales_Order_Shipment_Dimload/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Sales_Order_Shipment_Dimload/output/Log_Id">Log Id</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Sales_Order_Shipment_Dimload/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Sales_Order_Shipment_Dimload/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Sales_Order_Shipment_Dimload/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Sales_Order_Shipment_Dimload/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Sales_Order_Shipment_Dimload/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Sales_Order_Shipment_Dimload/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Sales_Order_Shipment_Dimload/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Sales_Order_Shipment_Dimload/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Sales_Order_Shipment_Dimload/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mct_Dim_Sales_Order_Shipment_Dimload/fault"
+                                  id="kmkgqy3a"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mct_Dim_Sales_Order_Shipment_Dimload/fault"
+                                  id="kmkgqy3b"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kieg2jbi" targetId="kh6837ge" type="containerLink"/>
+                  </flow>
+                  <flow id="kieg2jbw">
+                     <eventContainer id="kmkgqy3z">
+                        <service id="kieg2je9">
+                           <title>mct_Dim_Sales_Order_Booking_Dimload</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mct_Dim_Sales_Order_Booking_Dimload</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">aRGrAUsRf9qcCJvdc5vvOM</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mct-Dim-Sales-Order-Booking-Dimload">temp.mct_Dim_Sales_Order_Booking_Dimload</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Sales_Order_Booking_Dimload/output/Object_Name">Object Name</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Sales_Order_Booking_Dimload/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Sales_Order_Booking_Dimload/output/Log_Id">Log Id</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Sales_Order_Booking_Dimload/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Sales_Order_Booking_Dimload/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Sales_Order_Booking_Dimload/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Sales_Order_Booking_Dimload/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Sales_Order_Booking_Dimload/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Sales_Order_Booking_Dimload/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Sales_Order_Booking_Dimload/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Sales_Order_Booking_Dimload/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Sales_Order_Booking_Dimload/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mct_Dim_Sales_Order_Booking_Dimload/fault"
+                                  id="kmkgqy3x"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mct_Dim_Sales_Order_Booking_Dimload/fault"
+                                  id="kmkgqy3y"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kieg2jbx" targetId="kh6837ge" type="containerLink"/>
+                  </flow>
+                  <link id="kh6837gh" targetId="kh6837gi" type="containerLink"/>
+                  <link id="kh6837gk" targetId="kh6837gl" type="containerLink"/>
+                  <link id="kieg2jb2" targetId="kieg2jb3" type="containerLink"/>
+                  <link id="kieg2jbg" targetId="kieg2jbh" type="containerLink"/>
+                  <link id="kieg2jbv" targetId="kieg2jbw" type="containerLink"/>
+                  <link id="kieg2jf1" targetId="kh6837qv"/>
+               </container>
+               <eventContainer id="kh6837qv">
+                  <service id="kh6837qf">
+                     <title>mct_fact_booking_dialy_factLoad</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mct_fact_booking_dialy_factLoad</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">0julxJio92dlEyydXrRNAV</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mct-fact-booking-dialy-factLoad">temp.mct_fact_booking_dialy_factLoad</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field"
+                                   to="temp.mct_fact_booking_dialy_factLoad/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.mct_fact_booking_dialy_factLoad/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.mct_fact_booking_dialy_factLoad/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.mct_fact_booking_dialy_factLoad/output/Task_Id">Task Id</operation>
+                        <operation source="field"
+                                   to="temp.mct_fact_booking_dialy_factLoad/output/Task_Status">Task Status</operation>
+                        <operation source="field"
+                                   to="temp.mct_fact_booking_dialy_factLoad/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.mct_fact_booking_dialy_factLoad/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.mct_fact_booking_dialy_factLoad/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.mct_fact_booking_dialy_factLoad/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.mct_fact_booking_dialy_factLoad/output/Start_Time">Start Time</operation>
+                        <operation source="field"
+                                   to="temp.mct_fact_booking_dialy_factLoad/output/End_Time">End Time</operation>
+                        <operation source="field"
+                                   to="temp.mct_fact_booking_dialy_factLoad/output/Error_Message">Error Message</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="kh6837rx" targetId="kh6837sc"/>
+                  <events>
+                     <catch faultField="temp.mct_fact_booking_dialy_factLoad/fault"
+                            id="kh6837qt"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.mct_fact_booking_dialy_factLoad/fault"
+                            id="kh6837qu"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="kh6837sc">
+                  <service id="kh6837rw">
+                     <title>mct_fact_shipment_dialy_factLoad</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mct_fact_shipment_dialy_factLoad</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">1oCba2RZHwBei2HAJmAi2I</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mct-fact-shipment-dialy-factLoad">temp.mct_fact_shipment_dialy_factLoad</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field"
+                                   to="temp.mct_fact_shipment_dialy_factLoad/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.mct_fact_shipment_dialy_factLoad/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.mct_fact_shipment_dialy_factLoad/output/Log_Id">Log Id</operation>
+                        <operation source="field"
+                                   to="temp.mct_fact_shipment_dialy_factLoad/output/Task_Id">Task Id</operation>
+                        <operation source="field"
+                                   to="temp.mct_fact_shipment_dialy_factLoad/output/Task_Status">Task Status</operation>
+                        <operation source="field"
+                                   to="temp.mct_fact_shipment_dialy_factLoad/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.mct_fact_shipment_dialy_factLoad/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.mct_fact_shipment_dialy_factLoad/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.mct_fact_shipment_dialy_factLoad/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.mct_fact_shipment_dialy_factLoad/output/Start_Time">Start Time</operation>
+                        <operation source="field"
+                                   to="temp.mct_fact_shipment_dialy_factLoad/output/End_Time">End Time</operation>
+                        <operation source="field"
+                                   to="temp.mct_fact_shipment_dialy_factLoad/output/Error_Message">Error Message</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="kh6837ry" targetId="c"/>
+                  <events>
+                     <catch faultField="temp.mct_fact_shipment_dialy_factLoad/fault"
+                            id="kh6837sa"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.mct_fact_shipment_dialy_factLoad/fault"
+                            id="kh6837sb"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-Dim-Customer-DimLoad"
+                              isByCopy="true"
+                              name="mct-Dim-Customer-DimLoad">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-Dim-Account-Booking-DimLoad"
+                              isByCopy="true"
+                              name="mct-Dim-Account-Booking-DimLoad">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-fact-booking-dialy-factLoad"
+                              isByCopy="true"
+                              name="mct-fact-booking-dialy-factLoad">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-fact-shipment-dialy-factLoad"
+                              isByCopy="true"
+                              name="mct-fact-shipment-dialy-factLoad">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-Dim-Product-Booking-DimLoad"
+                              isByCopy="true"
+                              name="mct-Dim-Product-Booking-DimLoad">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-Dim-Sales-Order-Shipment-Dimload"
+                              isByCopy="true"
+                              name="mct-Dim-Sales-Order-Shipment-Dimload">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-Dim-Sales-Order-Booking-Dimload"
+                              isByCopy="true"
+                              name="mct-Dim-Sales-Order-Booking-Dimload">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>0UwzaUc4uIVjOM8Lq7ayYx</types1:GUID>
+      <types1:DisplayName>tf_SupplyChain_Dimension_fact</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2021-04-20T08:56:58.559Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

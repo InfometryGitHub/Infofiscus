@@ -1,0 +1,22 @@
+{
+  "objectInfo" : {
+    "id" : "6rxUbXK0PW9hABVruJjzYJ",
+    "name" : "PARAMETER_INFOFISCUS",
+    "type" : "Project",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "objectRefs" : [ ]
+}

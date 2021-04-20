@@ -1,0 +1,185 @@
+{
+  "objectInfo" : {
+    "id" : "4ywPayVqqRfhUGY5o6DLss",
+    "name" : "tf_SupplyChain_staging",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "xhFdw8jIw8jIw8j-gt-15263285-2021-03-18T06:02:23.758Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "INVALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "4dBp20EP3D4iKBT5pdC2CW",
+    "name" : "mct_Stg_transaction_link_Extract",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01037X0Z0000000004LJ"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/PARAMETER_INFOFISCUS/Supply_Chain_Parmeter"
+  }, {
+    "id" : "93kdjBsoNY6lIOZU5uf2kT",
+    "name" : "mct_Stg_Booking_Extract",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01037X0Z0000000004LR"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/PARAMETER_INFOFISCUS/Supply_Chain_Parmeter"
+  }, {
+    "id" : "d4jcTzp1A4lbmmXlyeCKeP",
+    "name" : "mct_Stg_customers_Extract",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01037X0Z0000000004LM"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/PARAMETER_INFOFISCUS/Supply_Chain_Parmeter"
+  }, {
+    "id" : "1re2FmMZEwbgsCs87N6x6E",
+    "name" : "mct_stg_Transaction_lines_Extract",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01037X0Z0000000004LH"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/PARAMETER_INFOFISCUS/Supply_Chain_Parmeter"
+  }, {
+    "id" : "5Xyz1ckQ5F8dCkGyJDzl2N",
+    "name" : "mct_Stg_Shipment_Extract",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01037X0Z0000000004LQ"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/PARAMETER_INFOFISCUS/Supply_Chain_Parmeter"
+  }, {
+    "id" : "biA8BPJ33iAlm3DyCw1Am6",
+    "name" : "mct_Stg_Accounts_Extract",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01037X0Z0000000004M2"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/PARAMETER_INFOFISCUS/Supply_Chain_Parmeter"
+  }, {
+    "id" : "1a4F2WSUviEk5tJx5ovvEy",
+    "name" : "mct_Stg_product_Extract",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01037X0Z0000000004LL"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/PARAMETER_INFOFISCUS/Supply_Chain_Parmeter"
+  } ]
+}

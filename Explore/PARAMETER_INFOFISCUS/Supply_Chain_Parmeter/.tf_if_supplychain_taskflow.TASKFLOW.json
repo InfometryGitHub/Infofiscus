@@ -1,0 +1,84 @@
+{
+  "objectInfo" : {
+    "id" : "9vt2NqvFReMk6JRxPKPNgJ",
+    "name" : "tf_if_supplychain_taskflow",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "AUxEKSabbeJOSM8-gt-15362665-2021-03-18T06:02:24.331Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "3b9CuTpqRQIloWboZcFVkH",
+    "name" : "tf_SupplyChain_landing",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "vH2i2B7O2htghGZ-gt-15357228-2021-03-18T06:02:23.398Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "INVALID"
+      }
+    },
+    "path" : "/Explore/PARAMETER_INFOFISCUS/Supply_Chain_Parmeter"
+  }, {
+    "id" : "4ywPayVqqRfhUGY5o6DLss",
+    "name" : "tf_SupplyChain_staging",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "xhFdw8jIw8jIw8j-gt-15263285-2021-03-18T06:02:23.758Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "INVALID"
+      }
+    },
+    "path" : "/Explore/PARAMETER_INFOFISCUS/Supply_Chain_Parmeter"
+  }, {
+    "id" : "0UwzaUc4uIVjOM8Lq7ayYx",
+    "name" : "tf_SupplyChain_Dimension_fact",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "zTm8lnCmp6oIuQa-gt-15362651-2021-03-18T06:02:24.091Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/PARAMETER_INFOFISCUS/Supply_Chain_Parmeter"
+  } ]
+}

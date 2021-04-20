@@ -1,0 +1,833 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>9TCOshBnJKoJBUh-gt-15742067-2021-03-18T10:39:26.973Z::tf.xml</types1:EntryId>
+      <types1:Name>tf_InfoFiscus_finance_dim_fact_--2</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>BIJILDJ</types1:CreatedBy>
+      <types1:CreationDate>2021-03-18T10:39:27Z</types1:CreationDate>
+      <types1:ModifiedBy>BIJILDJ</types1:ModifiedBy>
+      <types1:ModificationDate>2021-04-15T15:27:51Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>BIJILDJ</types1:PublishedBy>
+      <types1:PublicationDate>2021-04-15T15:28:06Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.tf_InfoFiscus_finance_dim_fact_--2/tf_InfoFiscus_finance_dim_fact_--2.tf.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="tf_InfoFiscus_finance_dim_fact -"
+                   name="tf_InfoFiscus_finance_dim_fact_--2"
+                   overrideAPIName="false">
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="mct_Fact_GLJournals_FactLoad" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mct-Fact-GLJournals-FactLoad</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="mct_Agg_PNL_Sheet_Load" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mct-Agg-PNL-Sheet-Load</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="m_Fact_Plan_FactLoad" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mct-Fact-Plan-FactLoad</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="mct_Dim_COA_DimLoad" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mct-Dim-COA-DimLoad</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="mct_Agg_Trial_Balance_load" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mct-Agg-Trial-Balance-load</option>
+                  </options>
+               </field>
+               <field description="" name="mct_Balance_sheet_load" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mct-Balance-sheet-load</option>
+                  </options>
+               </field>
+               <field description="" name="mct_Fact_Invoice_factLoad" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mct-Fact-Invoice-factLoad</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="mct_Fact_Bill_FactLoad" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mct-Fact-GLBill-FactLoad</option>
+                  </options>
+               </field>
+               <field description="" name="mct_Dim_Entity_DimLoad" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mct-Dim-Entity-DimLoad</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="mct_Dim_Currencies_DimLoad" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mct-Dim-Currencies-DimLoad</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="mct_Dim_Account_DimLoad" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mct-Dim-Account-DimLoad</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="mct_Dim_Department_DimLoad" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mct-Dim-Department-DimLoad</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="km3lbf7i" targetId="kh65xkun"/>
+               </start>
+               <container id="kh65xkun" type="parallel">
+                  <title>Dim Load</title>
+                  <flow id="kh65xkur">
+                     <eventContainer id="kh65xkya">
+                        <service id="kh65xkxn">
+                           <title>mct_Dim_Entity_DimLoad</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mct_Dim_Entity_DimLoad</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">9bboR8KB5qqkW2psaobewC</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mct-Dim-Entity-DimLoad">temp.mct_Dim_Entity_DimLoad</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.mct_Dim_Entity_DimLoad/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.mct_Dim_Entity_DimLoad/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.mct_Dim_Entity_DimLoad/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.mct_Dim_Entity_DimLoad/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.mct_Dim_Entity_DimLoad/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Entity_DimLoad/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Entity_DimLoad/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Entity_DimLoad/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Entity_DimLoad/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.mct_Dim_Entity_DimLoad/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.mct_Dim_Entity_DimLoad/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.mct_Dim_Entity_DimLoad/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mct_Dim_Entity_DimLoad/fault"
+                                  id="kh65xky8"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mct_Dim_Entity_DimLoad/fault"
+                                  id="kh65xky9"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kh65xkus" targetId="kh65xkun" type="containerLink"/>
+                  </flow>
+                  <flow id="kh65xkuu">
+                     <eventContainer id="kh65xl0g">
+                        <service id="kh65xkzt">
+                           <title>mct_Dim_Currencies_DimLoad</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mct_Dim_Currencies_DimLoad</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">6MwbqK2eQFIfva6uiEwJOU</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mct-Dim-Currencies-DimLoad">temp.mct_Dim_Currencies_DimLoad</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.mct_Dim_Currencies_DimLoad/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.mct_Dim_Currencies_DimLoad/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.mct_Dim_Currencies_DimLoad/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.mct_Dim_Currencies_DimLoad/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.mct_Dim_Currencies_DimLoad/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Currencies_DimLoad/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Currencies_DimLoad/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Currencies_DimLoad/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Currencies_DimLoad/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.mct_Dim_Currencies_DimLoad/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.mct_Dim_Currencies_DimLoad/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Currencies_DimLoad/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mct_Dim_Currencies_DimLoad/fault"
+                                  id="kh65xl0e"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mct_Dim_Currencies_DimLoad/fault"
+                                  id="kh65xl0f"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kh65xkuv" targetId="kh65xkun" type="containerLink"/>
+                  </flow>
+                  <flow id="kh65xkvc">
+                     <eventContainer id="kh65xl2m">
+                        <service id="kh65xl1z">
+                           <title>mct_Dim_Account_DimLoad</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mct_Dim_Account_DimLoad</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">1jYXl8ITZgDlYy36T7ZHk0</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mct-Dim-Account-DimLoad">temp.mct_Dim_Account_DimLoad</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.mct_Dim_Account_DimLoad/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.mct_Dim_Account_DimLoad/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.mct_Dim_Account_DimLoad/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.mct_Dim_Account_DimLoad/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.mct_Dim_Account_DimLoad/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Account_DimLoad/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Account_DimLoad/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Account_DimLoad/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Account_DimLoad/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.mct_Dim_Account_DimLoad/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.mct_Dim_Account_DimLoad/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.mct_Dim_Account_DimLoad/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mct_Dim_Account_DimLoad/fault"
+                                  id="kh65xl2k"
+                                  interrupting="true"
+                                  name="error"/>
+                           <catch faultField="temp.mct_Dim_Account_DimLoad/fault"
+                                  id="kh65xl2l"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kh65xkvd" targetId="kh65xkun" type="containerLink"/>
+                  </flow>
+                  <flow id="kh65xkvv">
+                     <eventContainer id="kh65xl4s">
+                        <service id="kh65xl45">
+                           <title>mct_Dim_Department_DimLoad</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mct_Dim_Department_DimLoad</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">eGoTiq2oAc7elBPmOg3S03</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mct-Dim-Department-DimLoad">temp.mct_Dim_Department_DimLoad</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.mct_Dim_Department_DimLoad/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.mct_Dim_Department_DimLoad/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.mct_Dim_Department_DimLoad/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.mct_Dim_Department_DimLoad/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.mct_Dim_Department_DimLoad/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Department_DimLoad/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Department_DimLoad/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Department_DimLoad/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Department_DimLoad/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.mct_Dim_Department_DimLoad/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.mct_Dim_Department_DimLoad/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.mct_Dim_Department_DimLoad/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mct_Dim_Department_DimLoad/fault"
+                                  id="kh65xl4q"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mct_Dim_Department_DimLoad/fault"
+                                  id="kh65xl4r"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kh65xkvw" targetId="kh65xkun" type="containerLink"/>
+                  </flow>
+                  <link id="kh65xkuq" targetId="kh65xkur" type="containerLink"/>
+                  <link id="kh65xkut" targetId="kh65xkuu" type="containerLink"/>
+                  <link id="kh65xkvb" targetId="kh65xkvc" type="containerLink"/>
+                  <link id="kh65xkvu" targetId="kh65xkvv" type="containerLink"/>
+                  <link id="kie0bxsv" targetId="kmewoiby"/>
+               </container>
+               <eventContainer id="kmewoiby">
+                  <service id="kie0bxsu">
+                     <title>mct_Dim_COA_DimLoad</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mct_Dim_COA_DimLoad</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">lW4kKHBfb0wjmocW7pg4ek</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mct-Dim-COA-DimLoad">temp.mct_Dim_COA_DimLoad</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.mct_Dim_COA_DimLoad/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.mct_Dim_COA_DimLoad/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.mct_Dim_COA_DimLoad/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.mct_Dim_COA_DimLoad/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.mct_Dim_COA_DimLoad/output/Task_Status">Task Status</operation>
+                        <operation source="field" to="temp.mct_Dim_COA_DimLoad/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.mct_Dim_COA_DimLoad/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field" to="temp.mct_Dim_COA_DimLoad/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.mct_Dim_COA_DimLoad/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.mct_Dim_COA_DimLoad/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.mct_Dim_COA_DimLoad/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.mct_Dim_COA_DimLoad/output/Error_Message">Error Message</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="kie0bxsw" targetId="kh65xldu"/>
+                  <events>
+                     <catch faultField="temp.mct_Dim_COA_DimLoad/fault"
+                            id="kmewoibw"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.mct_Dim_COA_DimLoad/fault"
+                            id="kmewoibx"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="kh65xldu">
+                  <service id="kh65xld5">
+                     <title>mct_Fact_GLJournals_FactLoad</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mct_Fact_GLJournals_FactLoad</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">22sWesa2y8ofPH7v8HjbYb</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mct-Fact-GLJournals-FactLoad">temp.mct_Fact_GLJournals_FactLoad</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field"
+                                   to="temp.mct_Fact_GLJournals_FactLoad/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.mct_Fact_GLJournals_FactLoad/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.mct_Fact_GLJournals_FactLoad/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.mct_Fact_GLJournals_FactLoad/output/Task_Id">Task Id</operation>
+                        <operation source="field"
+                                   to="temp.mct_Fact_GLJournals_FactLoad/output/Task_Status">Task Status</operation>
+                        <operation source="field"
+                                   to="temp.mct_Fact_GLJournals_FactLoad/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.mct_Fact_GLJournals_FactLoad/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.mct_Fact_GLJournals_FactLoad/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.mct_Fact_GLJournals_FactLoad/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.mct_Fact_GLJournals_FactLoad/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.mct_Fact_GLJournals_FactLoad/output/End_Time">End Time</operation>
+                        <operation source="field"
+                                   to="temp.mct_Fact_GLJournals_FactLoad/output/Error_Message">Error Message</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="kiifx26l" targetId="kh65xlia"/>
+                  <events>
+                     <catch faultField="temp.mct_Fact_GLJournals_FactLoad/fault"
+                            id="kh65xlds"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.mct_Fact_GLJournals_FactLoad/fault"
+                            id="kh65xldt"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="kh65xlia">
+                  <service id="kh65xlhl">
+                     <title>mct_Agg_PNL_Sheet_Load</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mct_Agg_PNL_Sheet_Load</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">gLcXN0PTmimbSXV1IBHX2u</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mct-Agg-PNL-Sheet-Load">temp.mct_Agg_PNL_Sheet_Load</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.mct_Agg_PNL_Sheet_Load/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.mct_Agg_PNL_Sheet_Load/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.mct_Agg_PNL_Sheet_Load/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.mct_Agg_PNL_Sheet_Load/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.mct_Agg_PNL_Sheet_Load/output/Task_Status">Task Status</operation>
+                        <operation source="field"
+                                   to="temp.mct_Agg_PNL_Sheet_Load/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.mct_Agg_PNL_Sheet_Load/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.mct_Agg_PNL_Sheet_Load/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.mct_Agg_PNL_Sheet_Load/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.mct_Agg_PNL_Sheet_Load/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.mct_Agg_PNL_Sheet_Load/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.mct_Agg_PNL_Sheet_Load/output/Error_Message">Error Message</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="kh65xlju" targetId="kh65xlki"/>
+                  <events>
+                     <catch faultField="temp.mct_Agg_PNL_Sheet_Load/fault"
+                            id="kh65xli8"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.mct_Agg_PNL_Sheet_Load/fault"
+                            id="kh65xli9"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="kh65xlki">
+                  <service id="kh65xljt">
+                     <title>m_Fact_Plan_FactLoad</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mct_Fact_Plan_FactLoad</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">2fnbbwiKZ8MeYcznt5cK8a</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mct-Fact-Plan-FactLoad">temp.m_Fact_Plan_FactLoad</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.m_Fact_Plan_FactLoad/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.m_Fact_Plan_FactLoad/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.m_Fact_Plan_FactLoad/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.m_Fact_Plan_FactLoad/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.m_Fact_Plan_FactLoad/output/Task_Status">Task Status</operation>
+                        <operation source="field"
+                                   to="temp.m_Fact_Plan_FactLoad/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.m_Fact_Plan_FactLoad/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.m_Fact_Plan_FactLoad/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.m_Fact_Plan_FactLoad/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.m_Fact_Plan_FactLoad/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.m_Fact_Plan_FactLoad/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.m_Fact_Plan_FactLoad/output/Error_Message">Error Message</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="kmgab4nu" targetId="kmgab4oj"/>
+                  <events>
+                     <catch faultField="temp.m_Fact_Plan_FactLoad/fault"
+                            id="kh65xlkg"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.m_Fact_Plan_FactLoad/fault"
+                            id="kh65xlkh"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="kmgab4oj">
+                  <service id="kmgab4nt">
+                     <title>mct_Balance_sheet_load</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mct_Balance_sheet_load</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">5wFEKkFq5mclFXH6yxAU0I</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mct-Balance-sheet-load">temp.mct_Balance_sheet_load</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput/>
+                  </service>
+                  <link id="kn4k08a5" targetId="kmgab4n1"/>
+                  <events>
+                     <catch faultField="temp.mct_Balance_sheet_load/fault"
+                            id="kmgab4oh"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.mct_Balance_sheet_load/fault"
+                            id="kmgab4oi"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="kmgab4n1">
+                  <service id="kmgab4mb">
+                     <title>mct_Agg_Trial_Balance_load</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mct_Agg_Trial_Balance_load</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">hxzBjhI4xwVlmwu0XsBhgV</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mct-Agg-Trial-Balance-load">temp.mct_Agg_Trial_Balance_load</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.mct_Agg_Trial_Balance_load/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.mct_Agg_Trial_Balance_load/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.mct_Agg_Trial_Balance_load/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.mct_Agg_Trial_Balance_load/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.mct_Agg_Trial_Balance_load/output/Task_Status">Task Status</operation>
+                        <operation source="field"
+                                   to="temp.mct_Agg_Trial_Balance_load/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.mct_Agg_Trial_Balance_load/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.mct_Agg_Trial_Balance_load/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.mct_Agg_Trial_Balance_load/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.mct_Agg_Trial_Balance_load/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.mct_Agg_Trial_Balance_load/output/End_Time">End Time</operation>
+                        <operation source="field"
+                                   to="temp.mct_Agg_Trial_Balance_load/output/Error_Message">Error Message</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="kn4k08ac" targetId="kn4pv360"/>
+                  <events>
+                     <catch faultField="temp.mct_Agg_Trial_Balance_load/fault"
+                            id="kmgab4mz"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.mct_Agg_Trial_Balance_load/fault"
+                            id="kmgab4n0"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="kn4pv360">
+                  <service id="kn4k08ab">
+                     <title>mct_Fact_Invoice_factLoad</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mct_Fact_Invoice_factLoad</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">5jgkFdTcPn8eqLSlPIjGUT</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mct-Fact-Invoice-factLoad">temp.mct_Fact_Invoice_factLoad</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.mct_Fact_Invoice_factLoad/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.mct_Fact_Invoice_factLoad/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.mct_Fact_Invoice_factLoad/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.mct_Fact_Invoice_factLoad/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.mct_Fact_Invoice_factLoad/output/Task_Status">Task Status</operation>
+                        <operation source="field"
+                                   to="temp.mct_Fact_Invoice_factLoad/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.mct_Fact_Invoice_factLoad/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.mct_Fact_Invoice_factLoad/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.mct_Fact_Invoice_factLoad/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.mct_Fact_Invoice_factLoad/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.mct_Fact_Invoice_factLoad/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.mct_Fact_Invoice_factLoad/output/Error_Message">Error Message</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="kn4k08b7" targetId="kn4k08bw"/>
+                  <events>
+                     <catch faultField="temp.mct_Fact_Invoice_factLoad/fault"
+                            id="kn4pv35y"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.mct_Fact_Invoice_factLoad/fault"
+                            id="kn4pv35z"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="kn4k08bw">
+                  <service id="kn4k08b6">
+                     <title>mct_Fact_Bill_FactLoad</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mct_Fact_GLBill_FactLoad</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">6oMChMSOxbogQGJpYa6fKr</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mct-Fact-GLBill-FactLoad">temp.mct_Fact_Bill_FactLoad</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.mct_Fact_Bill_FactLoad/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.mct_Fact_Bill_FactLoad/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.mct_Fact_Bill_FactLoad/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.mct_Fact_Bill_FactLoad/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.mct_Fact_Bill_FactLoad/output/Task_Status">Task Status</operation>
+                        <operation source="field"
+                                   to="temp.mct_Fact_Bill_FactLoad/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.mct_Fact_Bill_FactLoad/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.mct_Fact_Bill_FactLoad/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.mct_Fact_Bill_FactLoad/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.mct_Fact_Bill_FactLoad/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.mct_Fact_Bill_FactLoad/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.mct_Fact_Bill_FactLoad/output/Error_Message">Error Message</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="kn4k08b8" targetId="c"/>
+                  <events>
+                     <catch faultField="temp.mct_Fact_Bill_FactLoad/fault"
+                            id="kn4k08bu"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.mct_Fact_Bill_FactLoad/fault"
+                            id="kn4k08bv"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-Fact-GLJournals-FactLoad"
+                              isByCopy="true"
+                              name="mct-Fact-GLJournals-FactLoad">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-Agg-PNL-Sheet-Load"
+                              isByCopy="true"
+                              name="mct-Agg-PNL-Sheet-Load">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-Fact-Plan-FactLoad"
+                              isByCopy="true"
+                              name="mct-Fact-Plan-FactLoad">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-Dim-COA-DimLoad"
+                              isByCopy="true"
+                              name="mct-Dim-COA-DimLoad">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-Agg-Trial-Balance-load"
+                              isByCopy="true"
+                              name="mct-Agg-Trial-Balance-load">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-Balance-sheet-load"
+                              isByCopy="true"
+                              name="mct-Balance-sheet-load">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-Fact-Invoice-factLoad"
+                              isByCopy="true"
+                              name="mct-Fact-Invoice-factLoad">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-Fact-GLBill-FactLoad"
+                              isByCopy="true"
+                              name="mct-Fact-GLBill-FactLoad">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>19nZnImYuTzcI25UU2RM4e</types1:GUID>
+      <types1:DisplayName>tf_InfoFiscus_finance_dim_fact -</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2021-04-20T08:56:58.543Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

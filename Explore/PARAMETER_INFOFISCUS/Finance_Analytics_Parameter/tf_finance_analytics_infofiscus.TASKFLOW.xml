@@ -1,0 +1,75 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>pnzYLnzYLnzYLnz-gt-22241029-2021-03-22T09:29:30.249Z::tf.xml</types1:EntryId>
+      <types1:Name>tf_finance_analytics_infofiscus</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>AISHWARYAK</types1:CreatedBy>
+      <types1:CreationDate>2021-03-22T09:29:30Z</types1:CreationDate>
+      <types1:ModifiedBy>AISHWARYAK</types1:ModifiedBy>
+      <types1:ModificationDate>2021-04-05T05:17:05Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
+      <types1:PublishedBy>AISHWARYAK</types1:PublishedBy>
+      <types1:PublicationDate>2021-04-15T12:58:17Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.tf_finance_analytics_infofiscus/tf_finance_analytics_infofiscus.tf.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="tf_finance_analytics_infofiscus"
+                   name="tf_finance_analytics_infofiscus"
+                   overrideAPIName="false">
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="kmkdy5bf" targetId="kmkdy5be"/>
+               </start>
+               <subflow id="kmkdy5be">
+                  <title>landing</title>
+                  <subflowGUID>68MR8A5GL8SkI66f4XdJiY</subflowGUID>
+                  <subflowPath>tf_InfoFiscus_finance_landing-2</subflowPath>
+                  <runForEach>false</runForEach>
+                  <input/>
+                  <outputDef/>
+                  <link id="kmkdy5bs" targetId="kmkdy5br"/>
+               </subflow>
+               <subflow id="kmkdy5br">
+                  <title>Staging</title>
+                  <subflowGUID>kYc3vMbeT0oiUlVvJBzwqJ</subflowGUID>
+                  <subflowPath>tf_InfoFiscus_finance_stage</subflowPath>
+                  <runForEach>false</runForEach>
+                  <input/>
+                  <outputDef/>
+                  <link id="kmkdy5c4" targetId="kmkdy5c3"/>
+               </subflow>
+               <subflow id="kmkdy5c3">
+                  <title>Fact</title>
+                  <subflowGUID>19nZnImYuTzcI25UU2RM4e</subflowGUID>
+                  <subflowPath>tf_InfoFiscus_finance_dim_fact_--2</subflowPath>
+                  <runForEach>false</runForEach>
+                  <input/>
+                  <outputDef/>
+                  <link id="kmkdy5c5" targetId="c"/>
+               </subflow>
+               <end id="c"/>
+            </flow>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>1GCBI0cAXRti00bOxYMuC9</types1:GUID>
+      <types1:DisplayName>tf_finance_analytics_infofiscus</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2021-04-20T08:56:58.621Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
