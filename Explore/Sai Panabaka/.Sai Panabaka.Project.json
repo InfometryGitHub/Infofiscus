@@ -1,0 +1,22 @@
+{
+  "objectInfo" : {
+    "id" : "1PmbcjnEHBlkBf9GqXCEGd",
+    "name" : "Sai Panabaka",
+    "type" : "Project",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "Training&POC",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "objectRefs" : [ ]
+}
