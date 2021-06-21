@@ -12,11 +12,11 @@
       <types1:ProcessGroup/>
       <types1:CreatedBy>BIJILDJ</types1:CreatedBy>
       <types1:CreationDate>2021-03-18T06:02:23Z</types1:CreationDate>
-      <types1:ModifiedBy>BIJILDJ</types1:ModifiedBy>
-      <types1:ModificationDate>2021-04-06T07:36:23Z</types1:ModificationDate>
+      <types1:ModifiedBy>AISHWARYAK</types1:ModifiedBy>
+      <types1:ModificationDate>2021-05-04T07:21:54Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>AISHWARYAK</types1:PublishedBy>
-      <types1:PublicationDate>2021-04-09T14:22:40Z</types1:PublicationDate>
+      <types1:PublicationDate>2021-05-04T07:55:00Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/tf.tf_SupplyChain_landing-1/tf_SupplyChain_landing-1.tf.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -116,6 +116,13 @@
                      <option name="failOnFault">false</option>
                   </options>
                </field>
+               <field description="" name="MCT_Run_Id" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:m-Runid--table</option>
+                  </options>
+               </field>
             </tempFields>
             <notes/>
             <deployment suspendOnFault="false" tracingLevel="verbose">
@@ -123,8 +130,56 @@
             </deployment>
             <flow id="a">
                <start id="b">
-                  <link id="kh68378k" targetId="kh68378j"/>
+                  <link id="ko9pbtxq" targetId="ko9pbty5"/>
                </start>
+               <eventContainer id="ko9pbty5">
+                  <service id="ko9pbtxp">
+                     <title>MCT_Run_Id</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">m_Runid _table</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">9nLZP7z1K9sjB1iVrpBXAN</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="m-Runid--table">temp.MCT_Run_Id</operation>
+                           <operation source="formula" to="m-Runid--table/input[1]/RunId">
+                              <expression language="XQuery">util:getProcessId()</expression>
+                           </operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.MCT_Run_Id/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.MCT_Run_Id/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.MCT_Run_Id/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.MCT_Run_Id/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.MCT_Run_Id/output/Task_Status">Task Status</operation>
+                        <operation source="field" to="temp.MCT_Run_Id/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.MCT_Run_Id/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field" to="temp.MCT_Run_Id/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.MCT_Run_Id/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.MCT_Run_Id/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.MCT_Run_Id/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.MCT_Run_Id/output/Error_Message">Error Message</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="ko9pbtxr" targetId="kh68378j"/>
+                  <events>
+                     <catch faultField="temp.MCT_Run_Id/fault"
+                            id="ko9pbty3"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.MCT_Run_Id/fault"
+                            id="ko9pbty4"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
                <container id="kh68378j" type="parallel">
                   <title>Landing</title>
                   <flow id="kh68378n">
@@ -544,15 +599,15 @@
                   <link id="klut4aq4" targetId="klut4aq5" type="containerLink"/>
                   <link id="klut4aqf" targetId="klut4aqg" type="containerLink"/>
                   <link id="klvwrca0" targetId="klvwrca1" type="containerLink"/>
-                  <link id="klunnl39" targetId="c"/>
+                  <link id="ko9p469t" targetId="c"/>
                </container>
                <end id="c"/>
             </flow>
             <dependencies>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
-                              displayName="mct-Netsuite-Item-Subsidiary-Map-to-Landing-Item-Subsidiary-Map"
+                              displayName="mct-Netsuite-Item-Subsidiary-Map-Extract"
                               isByCopy="true"
-                              name="mct-Netsuite-Item-Subsidiary-Map-to-Landing-Item-Subsidiary-Map">
+                              name="mct-Netsuite-Item-Subsidiary-Map-Extract">
                   <description/>
                   <tags/>
                   <detail>
@@ -564,9 +619,9 @@
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
-                              displayName="mct-Netsuite-Itemvendormap-to-Landing-Itemvendormap"
+                              displayName="mct-Netsuite-Itemvendormap-Extract"
                               isByCopy="true"
-                              name="mct-Netsuite-Itemvendormap-to-Landing-Itemvendormap">
+                              name="mct-Netsuite-Itemvendormap-Extract">
                   <description/>
                   <tags/>
                   <detail>
@@ -578,9 +633,9 @@
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
-                              displayName="mct-Netsuite-Transaction-links-to-Landing-Transaction-links"
+                              displayName="mct-Netsuite-Transaction-links-Extract"
                               isByCopy="true"
-                              name="mct-Netsuite-Transaction-links-to-Landing-Transaction-links">
+                              name="mct-Netsuite-Transaction-links-Extract">
                   <description/>
                   <tags/>
                   <detail>
@@ -593,9 +648,9 @@
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
-                              displayName="mct-Netsuite-Customers-to-Landing-Customers1"
+                              displayName="mct-Netsuite-Customers-Extract"
                               isByCopy="true"
-                              name="mct-Netsuite-Customers-to-Landing-Customers1">
+                              name="mct-Netsuite-Customers-Extract">
                   <description/>
                   <tags/>
                   <detail>
@@ -609,9 +664,9 @@
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
-                              displayName="mct-Netsuite-Vendors-to-Landing-Vendors-1"
+                              displayName="mct-Netsuite-Vendors-Extract"
                               isByCopy="true"
-                              name="mct-Netsuite-Vendors-to-Landing-Vendors-1">
+                              name="mct-Netsuite-Vendors-Extract">
                   <description/>
                   <tags/>
                   <detail>
@@ -625,9 +680,9 @@
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
-                              displayName="mct-NetSuite-Items-to-Landing-Items1"
+                              displayName="mct-NetSuite-Items-Extract"
                               isByCopy="true"
-                              name="mct-NetSuite-Items-to-Landing-Items1">
+                              name="mct-NetSuite-Items-Extract">
                   <description/>
                   <tags/>
                   <detail>
@@ -641,9 +696,9 @@
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
-                              displayName="mct-Netsuite-Accounts-to-Landing-DB-Accounts-1"
+                              displayName="mct-Netsuite-Accounts-Extract"
                               isByCopy="true"
-                              name="mct-Netsuite-Accounts-to-Landing-DB-Accounts-1">
+                              name="mct-Netsuite-Accounts-Extract">
                   <description/>
                   <tags/>
                   <detail>
@@ -657,9 +712,9 @@
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
-                              displayName="mct-Netsuite-Departments-to-Landing-DB-Departments-1"
+                              displayName="mct-Netsuite-Departments-Extract"
                               isByCopy="true"
-                              name="mct-Netsuite-Departments-to-Landing-DB-Departments-1">
+                              name="mct-Netsuite-Departments-Extract">
                   <description/>
                   <tags/>
                   <detail>
@@ -673,9 +728,9 @@
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
-                              displayName="mct-netsuite-landing-transaction"
+                              displayName="mct-netsuite-transaction-Extract"
                               isByCopy="true"
-                              name="mct-netsuite-landing-transaction">
+                              name="mct-netsuite-transaction-Extract">
                   <description/>
                   <tags/>
                   <detail>
@@ -689,14 +744,29 @@
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
-                              displayName="mct-Netsuite-Transaction-Lines-to-Landing-DB-Transaction-Lines-1"
+                              displayName="mct-Netsuite-Transaction-Lines-Extract"
                               isByCopy="true"
-                              name="mct-Netsuite-Transaction-Lines-to-Landing-DB-Transaction-Lines-1">
+                              name="mct-Netsuite-Transaction-Lines-Extract">
                   <description/>
                   <tags/>
                   <detail>
                      <field label="Input Parameters" name="input" type="reference"/>
                      <field label="InOut Parameters" name="inout" type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="m-Runid--table"
+                              isByCopy="true"
+                              name="m-Runid--table">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters" name="input" type="reference"/>
                      <field label="TaskProperties Parameters"
                             name="taskProperties"
                             type="reference"/>
@@ -710,5 +780,5 @@
       <types1:GUID>3b9CuTpqRQIloWboZcFVkH</types1:GUID>
       <types1:DisplayName>tf_SupplyChain_landing</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2021-04-20T09:15:54.963Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2021-06-21T15:10:04.529Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

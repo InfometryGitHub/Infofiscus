@@ -1,0 +1,770 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>1YxQ2Tp5OjG4abc-gt-54765840-2021-05-04T12:48:40.847Z::tf.xml</types1:EntryId>
+      <types1:Name>tf_Sales_Analytics_Dimension-5</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>AISHWARYAK</types1:CreatedBy>
+      <types1:CreationDate>2021-05-04T12:48:41Z</types1:CreationDate>
+      <types1:ModifiedBy>AISHWARYAK</types1:ModifiedBy>
+      <types1:ModificationDate>2021-05-04T13:22:45Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>AISHWARYAK</types1:PublishedBy>
+      <types1:PublicationDate>2021-05-10T10:01:55Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.tf_Sales_Analytics_Dimension-5/tf_Sales_Analytics_Dimension-5.tf.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="tf_Sales_Analytics_Dimension"
+                   name="tf_Sales_Analytics_Dimension-5"
+                   overrideAPIName="false">
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="mtt_Stg_Account_Dim_Load" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mtt-Stg-Account-Dim-Load</option>
+                  </options>
+               </field>
+               <field description="" name="mct_Stg_Campaign_Dim_Load" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mct-Stg-Campaign-Dim-Load</option>
+                  </options>
+               </field>
+               <field description="" name="mtt_Stg_User_Dim_Load" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mtt-Stg-User-Dim-Load</option>
+                  </options>
+               </field>
+               <field description="" name="mtt_Stg_Contract_Dim_Load" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mtt-Stg-Contract-Dim-Load</option>
+                  </options>
+               </field>
+               <field description="" name="mct_Stg_Contact_Dim_Load" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mct-Stg-Contact-Dim-Load</option>
+                  </options>
+               </field>
+               <field description="" name="mct_Stg_Product_Dim_Load" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mct-Stg-Product-Dim-Load</option>
+                  </options>
+               </field>
+               <field description="" name="mct_Stg_Pricebook_Dim_Load" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mct-Stg-Pricebook-Dim-Load</option>
+                  </options>
+               </field>
+               <field description="" name="Data Task 8" type="string"/>
+               <field description="" name="Data Task 9" type="string"/>
+               <field description="" name="mct_Fact_lead" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mct-Fact-lead</option>
+                  </options>
+               </field>
+               <field description="" name="mct_Fact-Opportunity_Load" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mct-Fact-Opportunity-Load</option>
+                  </options>
+               </field>
+               <field description="" name="Mtt_Run" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:m-Runid--table</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="koa299rt" targetId="koa299s7"/>
+               </start>
+               <eventContainer id="koa299s7">
+                  <service id="koa299rs">
+                     <title>Mtt_Run</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">m_Runid _table</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">2YY2dOAcruTgzu8wT59k0r</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="m-Runid--table">temp.Mtt_Run</operation>
+                           <operation source="formula" to="m-Runid--table/input[1]/RunId">
+                              <expression language="XQuery">util:getProcessId()</expression>
+                           </operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.Mtt_Run/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Task_Status">Task Status</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Error_Message">Error Message</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="koa299ru" targetId="knsx0cab"/>
+                  <events>
+                     <catch faultField="temp.Mtt_Run/fault"
+                            id="koa299s5"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.Mtt_Run/fault"
+                            id="koa299s6"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <container id="knsx0cab" type="parallel">
+                  <title>Parallel Paths 1</title>
+                  <flow id="knsx0caf">
+                     <eventContainer id="knsx0cgy">
+                        <service id="knsx0ccs">
+                           <title>mtt_Stg_Account_Dim_Load</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mtt_Stg_Account_Dim_Load</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">95ghYctFP41enPsIW6prWa</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mtt-Stg-Account-Dim-Load">temp.mtt_Stg_Account_Dim_Load</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.mtt_Stg_Account_Dim_Load/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.mtt_Stg_Account_Dim_Load/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.mtt_Stg_Account_Dim_Load/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.mtt_Stg_Account_Dim_Load/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.mtt_Stg_Account_Dim_Load/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Account_Dim_Load/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Account_Dim_Load/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Account_Dim_Load/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Account_Dim_Load/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.mtt_Stg_Account_Dim_Load/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.mtt_Stg_Account_Dim_Load/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.mtt_Stg_Account_Dim_Load/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mtt_Stg_Account_Dim_Load/fault"
+                                  id="knsx0cgw"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mtt_Stg_Account_Dim_Load/fault"
+                                  id="knsx0cgx"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="knsx0cag" targetId="knsx0cab" type="containerLink"/>
+                  </flow>
+                  <flow id="knsx0cai">
+                     <eventContainer id="knsx0ci7">
+                        <service id="knsx0cd6">
+                           <title>mct_Stg_Campaign_Dim_Load</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mct_Stg_Campaign_Dim_Load</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">7QsUK8j0mSxgBsMHxiRdat</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mct-Stg-Campaign-Dim-Load">temp.mct_Stg_Campaign_Dim_Load</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.mct_Stg_Campaign_Dim_Load/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.mct_Stg_Campaign_Dim_Load/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.mct_Stg_Campaign_Dim_Load/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.mct_Stg_Campaign_Dim_Load/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.mct_Stg_Campaign_Dim_Load/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mct_Stg_Campaign_Dim_Load/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Stg_Campaign_Dim_Load/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Stg_Campaign_Dim_Load/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Stg_Campaign_Dim_Load/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.mct_Stg_Campaign_Dim_Load/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.mct_Stg_Campaign_Dim_Load/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.mct_Stg_Campaign_Dim_Load/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mct_Stg_Campaign_Dim_Load/fault"
+                                  id="knsx0ci5"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mct_Stg_Campaign_Dim_Load/fault"
+                                  id="knsx0ci6"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="knsx0caj" targetId="knsx0cab" type="containerLink"/>
+                  </flow>
+                  <flow id="knsx0can">
+                     <eventContainer id="knsx0cj7">
+                        <service id="knsx0cdk">
+                           <title>mtt_Stg_User_Dim_Load</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mtt_Stg_User_Dim_Load</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">5kWjLTXwmOyj8rlQI1JS6Q</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mtt-Stg-User-Dim-Load">temp.mtt_Stg_User_Dim_Load</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.mtt_Stg_User_Dim_Load/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.mtt_Stg_User_Dim_Load/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.mtt_Stg_User_Dim_Load/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.mtt_Stg_User_Dim_Load/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.mtt_Stg_User_Dim_Load/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_User_Dim_Load/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_User_Dim_Load/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_User_Dim_Load/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_User_Dim_Load/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.mtt_Stg_User_Dim_Load/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.mtt_Stg_User_Dim_Load/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.mtt_Stg_User_Dim_Load/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mtt_Stg_User_Dim_Load/fault"
+                                  id="knsx0cj5"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mtt_Stg_User_Dim_Load/fault"
+                                  id="knsx0cj6"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="knsx0cao" targetId="knsx0cab" type="containerLink"/>
+                  </flow>
+                  <flow id="knsx0cat">
+                     <eventContainer id="knsx0cl4">
+                        <service id="knsx0cdy">
+                           <title>mtt_Stg_Contract_Dim_Load</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mtt_Stg_Contract_Dim_Load</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">1dvcRrUNQyjlmCww4XiBU5</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mtt-Stg-Contract-Dim-Load">temp.mtt_Stg_Contract_Dim_Load</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.mtt_Stg_Contract_Dim_Load/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.mtt_Stg_Contract_Dim_Load/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.mtt_Stg_Contract_Dim_Load/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.mtt_Stg_Contract_Dim_Load/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.mtt_Stg_Contract_Dim_Load/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Contract_Dim_Load/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Contract_Dim_Load/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Contract_Dim_Load/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Contract_Dim_Load/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.mtt_Stg_Contract_Dim_Load/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.mtt_Stg_Contract_Dim_Load/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.mtt_Stg_Contract_Dim_Load/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mtt_Stg_Contract_Dim_Load/fault"
+                                  id="knsx0cl2"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mtt_Stg_Contract_Dim_Load/fault"
+                                  id="knsx0cl3"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="knsx0cau" targetId="knsx0cab" type="containerLink"/>
+                  </flow>
+                  <flow id="knsx0cb0">
+                     <eventContainer id="knsx0cn1">
+                        <service id="knsx0cec">
+                           <title>mct_Stg_Contact_Dim_Load</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mct_Stg_Contact_Dim_Load</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">88jIzvbTO8riIn0AHJ1FGU</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mct-Stg-Contact-Dim-Load">temp.mct_Stg_Contact_Dim_Load</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.mct_Stg_Contact_Dim_Load/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.mct_Stg_Contact_Dim_Load/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.mct_Stg_Contact_Dim_Load/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.mct_Stg_Contact_Dim_Load/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.mct_Stg_Contact_Dim_Load/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mct_Stg_Contact_Dim_Load/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Stg_Contact_Dim_Load/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Stg_Contact_Dim_Load/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Stg_Contact_Dim_Load/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.mct_Stg_Contact_Dim_Load/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.mct_Stg_Contact_Dim_Load/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.mct_Stg_Contact_Dim_Load/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mct_Stg_Contact_Dim_Load/fault"
+                                  id="knsx0cmz"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mct_Stg_Contact_Dim_Load/fault"
+                                  id="knsx0cn0"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="knsx0cb1" targetId="knsx0cab" type="containerLink"/>
+                  </flow>
+                  <flow id="knsx0cb8">
+                     <eventContainer id="knsx0co1">
+                        <service id="knsx0ceq">
+                           <title>mct_Stg_Product_Dim_Load</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mct_Stg_Product_Dim_Load</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">aG2O9gKf8nbhDFA3ZmVhqn</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mct-Stg-Product-Dim-Load">temp.mct_Stg_Product_Dim_Load</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.mct_Stg_Product_Dim_Load/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.mct_Stg_Product_Dim_Load/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.mct_Stg_Product_Dim_Load/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.mct_Stg_Product_Dim_Load/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.mct_Stg_Product_Dim_Load/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mct_Stg_Product_Dim_Load/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Stg_Product_Dim_Load/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Stg_Product_Dim_Load/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Stg_Product_Dim_Load/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.mct_Stg_Product_Dim_Load/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.mct_Stg_Product_Dim_Load/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.mct_Stg_Product_Dim_Load/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mct_Stg_Product_Dim_Load/fault"
+                                  id="knsx0cnz"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mct_Stg_Product_Dim_Load/fault"
+                                  id="knsx0co0"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="knsx0cb9" targetId="knsx0cab" type="containerLink"/>
+                  </flow>
+                  <flow id="knsx0cbh">
+                     <eventContainer id="knsx0cp1">
+                        <service id="knsx0cf4">
+                           <title>mct_Stg_Pricebook_Dim_Load</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mct_Stg_Pricebook_Dim_Load</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">1w85IabCqSNkPFIWYxUnUa</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mct-Stg-Pricebook-Dim-Load">temp.mct_Stg_Pricebook_Dim_Load</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.mct_Stg_Pricebook_Dim_Load/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.mct_Stg_Pricebook_Dim_Load/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.mct_Stg_Pricebook_Dim_Load/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.mct_Stg_Pricebook_Dim_Load/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.mct_Stg_Pricebook_Dim_Load/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mct_Stg_Pricebook_Dim_Load/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Stg_Pricebook_Dim_Load/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Stg_Pricebook_Dim_Load/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mct_Stg_Pricebook_Dim_Load/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.mct_Stg_Pricebook_Dim_Load/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.mct_Stg_Pricebook_Dim_Load/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.mct_Stg_Pricebook_Dim_Load/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mct_Stg_Pricebook_Dim_Load/fault"
+                                  id="knsx0coz"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mct_Stg_Pricebook_Dim_Load/fault"
+                                  id="knsx0cp0"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="knsx0cbi" targetId="knsx0cab" type="containerLink"/>
+                  </flow>
+                  <link id="knsx0cae" targetId="knsx0caf" type="containerLink"/>
+                  <link id="knsx0cah" targetId="knsx0cai" type="containerLink"/>
+                  <link id="knsx0cam" targetId="knsx0can" type="containerLink"/>
+                  <link id="knsx0cas" targetId="knsx0cat" type="containerLink"/>
+                  <link id="knsx0caz" targetId="knsx0cb0" type="containerLink"/>
+                  <link id="knsx0cb7" targetId="knsx0cb8" type="containerLink"/>
+                  <link id="knsx0cbg" targetId="knsx0cbh" type="containerLink"/>
+                  <link id="knsx0cro" targetId="knsx0crn"/>
+               </container>
+               <container id="knsx0crn" type="parallel">
+                  <title>Parallel Paths 2</title>
+                  <flow id="knsx0crr">
+                     <service id="knsx0ctt">
+                        <title>mct_Fact-Opportunity_Load</title>
+                        <serviceName>ICSExecuteDataTask</serviceName>
+                        <serviceGUID/>
+                        <serviceInput>
+                           <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                           <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                           <parameter name="Task Name" source="constant" updatable="true">mct_Fact-Opportunity_Load</parameter>
+                           <parameter name="GUID" source="constant" updatable="true">1xV1ZZJ36I9lxdfrqLzLUi</parameter>
+                           <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                           <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                           <parameter name="taskField" source="nested">
+                              <operation source="field" to="mct-Fact-Opportunity-Load">temp.mct_Fact-Opportunity_Load</operation>
+                           </parameter>
+                        </serviceInput>
+                        <serviceOutput>
+                           <operation source="field" to="temp.mct_Fact-Opportunity_Load/output/Object_Name">Object Name</operation>
+                           <operation source="field" to="temp.mct_Fact-Opportunity_Load/output/Run_Id">Run Id</operation>
+                           <operation source="field" to="temp.mct_Fact-Opportunity_Load/output/Log_Id">Log Id</operation>
+                           <operation source="field" to="temp.mct_Fact-Opportunity_Load/output/Task_Id">Task Id</operation>
+                           <operation source="field" to="temp.mct_Fact-Opportunity_Load/output/Task_Status">Task Status</operation>
+                           <operation source="field"
+                                      to="temp.mct_Fact-Opportunity_Load/output/Success_Source_Rows">Success Source Rows</operation>
+                           <operation source="field"
+                                      to="temp.mct_Fact-Opportunity_Load/output/Failed_Source_Rows">Failed Source Rows</operation>
+                           <operation source="field"
+                                      to="temp.mct_Fact-Opportunity_Load/output/Success_Target_Rows">Success Target Rows</operation>
+                           <operation source="field"
+                                      to="temp.mct_Fact-Opportunity_Load/output/Failed_Target_Rows">Failed Target Rows</operation>
+                           <operation source="field" to="temp.mct_Fact-Opportunity_Load/output/Start_Time">Start Time</operation>
+                           <operation source="field" to="temp.mct_Fact-Opportunity_Load/output/End_Time">End Time</operation>
+                           <operation source="field" to="temp.mct_Fact-Opportunity_Load/output/Error_Message">Error Message</operation>
+                        </serviceOutput>
+                     </service>
+                     <link id="knsx0crs" targetId="knsx0crn" type="containerLink"/>
+                  </flow>
+                  <flow id="knsx0cru">
+                     <eventContainer id="knsx0cuu">
+                        <service id="knsx0ct8">
+                           <title>mct_Fact_lead</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mct_Fact_lead</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">aNsrP7BYdtLcIpXkM1qIER</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mct-Fact-lead">temp.mct_Fact_lead</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.mct_Fact_lead/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.mct_Fact_lead/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.mct_Fact_lead/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.mct_Fact_lead/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.mct_Fact_lead/output/Task_Status">Task Status</operation>
+                              <operation source="field" to="temp.mct_Fact_lead/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field" to="temp.mct_Fact_lead/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field" to="temp.mct_Fact_lead/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field" to="temp.mct_Fact_lead/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.mct_Fact_lead/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.mct_Fact_lead/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.mct_Fact_lead/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mct_Fact_lead/fault"
+                                  id="knsx0cus"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mct_Fact_lead/fault"
+                                  id="knsx0cut"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="knsx0crv" targetId="knsx0crn" type="containerLink"/>
+                  </flow>
+                  <link id="knsx0crq" targetId="knsx0crr" type="containerLink"/>
+                  <link id="koa299r7" targetId="c"/>
+                  <link id="knsx0crt" targetId="knsx0cru" type="containerLink"/>
+               </container>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mtt-Stg-Account-Dim-Load"
+                              isByCopy="true"
+                              name="mtt-Stg-Account-Dim-Load">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-Stg-Campaign-Dim-Load"
+                              isByCopy="true"
+                              name="mct-Stg-Campaign-Dim-Load">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mtt-Stg-User-Dim-Load"
+                              isByCopy="true"
+                              name="mtt-Stg-User-Dim-Load">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mtt-Stg-Contract-Dim-Load"
+                              isByCopy="true"
+                              name="mtt-Stg-Contract-Dim-Load">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-Stg-Contact-Dim-Load"
+                              isByCopy="true"
+                              name="mct-Stg-Contact-Dim-Load">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-Stg-Product-Dim-Load"
+                              isByCopy="true"
+                              name="mct-Stg-Product-Dim-Load">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-Stg-Pricebook-Dim-Load"
+                              isByCopy="true"
+                              name="mct-Stg-Pricebook-Dim-Load">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-Fact-lead"
+                              isByCopy="true"
+                              name="mct-Fact-lead">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-Fact-Opportunity-Load"
+                              isByCopy="true"
+                              name="mct-Fact-Opportunity-Load">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="m-Runid--table"
+                              isByCopy="true"
+                              name="m-Runid--table">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters" name="input" type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>4rVAV0RmHmAgZkIGDxh5Ej</types1:GUID>
+      <types1:DisplayName>tf_Sales_Analytics_Dimension</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2021-06-21T15:10:04.512Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

@@ -13,10 +13,10 @@
       <types1:CreatedBy>BIJILDJ</types1:CreatedBy>
       <types1:CreationDate>2021-03-18T06:02:24Z</types1:CreationDate>
       <types1:ModifiedBy>AISHWARYAK</types1:ModifiedBy>
-      <types1:ModificationDate>2021-04-09T11:31:01Z</types1:ModificationDate>
+      <types1:ModificationDate>2021-05-04T07:24:34Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>AISHWARYAK</types1:PublishedBy>
-      <types1:PublicationDate>2021-04-09T14:22:40Z</types1:PublicationDate>
+      <types1:PublicationDate>2021-05-04T07:55:00Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/tf.tf_SupplyChain_Dimension_fact-1/tf_SupplyChain_Dimension_fact-1.tf.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -91,6 +91,13 @@
                      <option name="failOnFault">false</option>
                   </options>
                </field>
+               <field description="" name="Mtt_Run" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:m-Runid--table</option>
+                  </options>
+               </field>
             </tempFields>
             <notes/>
             <deployment suspendOnFault="false" tracingLevel="verbose">
@@ -98,8 +105,165 @@
             </deployment>
             <flow id="a">
                <start id="b">
-                  <link id="klvw8pay" targetId="kh6837ge"/>
+                  <link id="ko9pgjno" targetId="ko9pgjny"/>
                </start>
+               <eventContainer id="ko9pgjny">
+                  <service id="ko9pgjnn">
+                     <title>Mtt_Run</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">m_Runid _table</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">9nLZP7z1K9sjB1iVrpBXAN</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="m-Runid--table">temp.Mtt_Run</operation>
+                           <operation source="formula" to="m-Runid--table/input[1]/RunId">
+                              <expression language="XQuery">util:getProcessId()</expression>
+                           </operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.Mtt_Run/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Task_Status">Task Status</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Error_Message">Error Message</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="ko9pgjnp" targetId="kh6837ge"/>
+                  <events>
+                     <catch faultField="temp.Mtt_Run/fault"
+                            id="ko9pgjnw"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.Mtt_Run/fault"
+                            id="ko9pgjnx"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="kh6837qv">
+                  <service id="kh6837qf">
+                     <title>mct_fact_booking_dialy_factLoad</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mct_fact_booking_dialy_factLoad</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">0julxJio92dlEyydXrRNAV</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mct-fact-booking-dialy-factLoad">temp.mct_fact_booking_dialy_factLoad</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field"
+                                   to="temp.mct_fact_booking_dialy_factLoad/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.mct_fact_booking_dialy_factLoad/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.mct_fact_booking_dialy_factLoad/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.mct_fact_booking_dialy_factLoad/output/Task_Id">Task Id</operation>
+                        <operation source="field"
+                                   to="temp.mct_fact_booking_dialy_factLoad/output/Task_Status">Task Status</operation>
+                        <operation source="field"
+                                   to="temp.mct_fact_booking_dialy_factLoad/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.mct_fact_booking_dialy_factLoad/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.mct_fact_booking_dialy_factLoad/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.mct_fact_booking_dialy_factLoad/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.mct_fact_booking_dialy_factLoad/output/Start_Time">Start Time</operation>
+                        <operation source="field"
+                                   to="temp.mct_fact_booking_dialy_factLoad/output/End_Time">End Time</operation>
+                        <operation source="field"
+                                   to="temp.mct_fact_booking_dialy_factLoad/output/Error_Message">Error Message</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="kh6837rx" targetId="kh6837sc"/>
+                  <events>
+                     <catch faultField="temp.mct_fact_booking_dialy_factLoad/fault"
+                            id="kh6837qt"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.mct_fact_booking_dialy_factLoad/fault"
+                            id="kh6837qu"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="kh6837sc">
+                  <service id="kh6837rw">
+                     <title>mct_fact_shipment_dialy_factLoad</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mct_fact_shipment_dialy_factLoad</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">1oCba2RZHwBei2HAJmAi2I</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mct-fact-shipment-dialy-factLoad">temp.mct_fact_shipment_dialy_factLoad</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field"
+                                   to="temp.mct_fact_shipment_dialy_factLoad/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.mct_fact_shipment_dialy_factLoad/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.mct_fact_shipment_dialy_factLoad/output/Log_Id">Log Id</operation>
+                        <operation source="field"
+                                   to="temp.mct_fact_shipment_dialy_factLoad/output/Task_Id">Task Id</operation>
+                        <operation source="field"
+                                   to="temp.mct_fact_shipment_dialy_factLoad/output/Task_Status">Task Status</operation>
+                        <operation source="field"
+                                   to="temp.mct_fact_shipment_dialy_factLoad/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.mct_fact_shipment_dialy_factLoad/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.mct_fact_shipment_dialy_factLoad/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.mct_fact_shipment_dialy_factLoad/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.mct_fact_shipment_dialy_factLoad/output/Start_Time">Start Time</operation>
+                        <operation source="field"
+                                   to="temp.mct_fact_shipment_dialy_factLoad/output/End_Time">End Time</operation>
+                        <operation source="field"
+                                   to="temp.mct_fact_shipment_dialy_factLoad/output/Error_Message">Error Message</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="ko9p2avw" targetId="c"/>
+                  <events>
+                     <catch faultField="temp.mct_fact_shipment_dialy_factLoad/fault"
+                            id="kh6837sa"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.mct_fact_shipment_dialy_factLoad/fault"
+                            id="kh6837sb"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
                <container id="kh6837ge" type="parallel">
                   <title>Dim Load</title>
                   <flow id="kh6837gi">
@@ -389,115 +553,6 @@
                   <link id="kieg2jbv" targetId="kieg2jbw" type="containerLink"/>
                   <link id="kieg2jf1" targetId="kh6837qv"/>
                </container>
-               <eventContainer id="kh6837qv">
-                  <service id="kh6837qf">
-                     <title>mct_fact_booking_dialy_factLoad</title>
-                     <serviceName>ICSExecuteDataTask</serviceName>
-                     <serviceGUID/>
-                     <serviceInput>
-                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
-                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
-                        <parameter name="Task Name" source="constant" updatable="true">mct_fact_booking_dialy_factLoad</parameter>
-                        <parameter name="GUID" source="constant" updatable="true">0julxJio92dlEyydXrRNAV</parameter>
-                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
-                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
-                        <parameter name="taskField" source="nested">
-                           <operation source="field" to="mct-fact-booking-dialy-factLoad">temp.mct_fact_booking_dialy_factLoad</operation>
-                        </parameter>
-                     </serviceInput>
-                     <serviceOutput>
-                        <operation source="field"
-                                   to="temp.mct_fact_booking_dialy_factLoad/output/Object_Name">Object Name</operation>
-                        <operation source="field" to="temp.mct_fact_booking_dialy_factLoad/output/Run_Id">Run Id</operation>
-                        <operation source="field" to="temp.mct_fact_booking_dialy_factLoad/output/Log_Id">Log Id</operation>
-                        <operation source="field" to="temp.mct_fact_booking_dialy_factLoad/output/Task_Id">Task Id</operation>
-                        <operation source="field"
-                                   to="temp.mct_fact_booking_dialy_factLoad/output/Task_Status">Task Status</operation>
-                        <operation source="field"
-                                   to="temp.mct_fact_booking_dialy_factLoad/output/Success_Source_Rows">Success Source Rows</operation>
-                        <operation source="field"
-                                   to="temp.mct_fact_booking_dialy_factLoad/output/Failed_Source_Rows">Failed Source Rows</operation>
-                        <operation source="field"
-                                   to="temp.mct_fact_booking_dialy_factLoad/output/Success_Target_Rows">Success Target Rows</operation>
-                        <operation source="field"
-                                   to="temp.mct_fact_booking_dialy_factLoad/output/Failed_Target_Rows">Failed Target Rows</operation>
-                        <operation source="field"
-                                   to="temp.mct_fact_booking_dialy_factLoad/output/Start_Time">Start Time</operation>
-                        <operation source="field"
-                                   to="temp.mct_fact_booking_dialy_factLoad/output/End_Time">End Time</operation>
-                        <operation source="field"
-                                   to="temp.mct_fact_booking_dialy_factLoad/output/Error_Message">Error Message</operation>
-                     </serviceOutput>
-                  </service>
-                  <link id="kh6837rx" targetId="kh6837sc"/>
-                  <events>
-                     <catch faultField="temp.mct_fact_booking_dialy_factLoad/fault"
-                            id="kh6837qt"
-                            interrupting="true"
-                            name="error">
-                        <suspend/>
-                     </catch>
-                     <catch faultField="temp.mct_fact_booking_dialy_factLoad/fault"
-                            id="kh6837qu"
-                            interrupting="true"
-                            name="warning"/>
-                  </events>
-               </eventContainer>
-               <eventContainer id="kh6837sc">
-                  <service id="kh6837rw">
-                     <title>mct_fact_shipment_dialy_factLoad</title>
-                     <serviceName>ICSExecuteDataTask</serviceName>
-                     <serviceGUID/>
-                     <serviceInput>
-                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
-                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
-                        <parameter name="Task Name" source="constant" updatable="true">mct_fact_shipment_dialy_factLoad</parameter>
-                        <parameter name="GUID" source="constant" updatable="true">1oCba2RZHwBei2HAJmAi2I</parameter>
-                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
-                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
-                        <parameter name="taskField" source="nested">
-                           <operation source="field" to="mct-fact-shipment-dialy-factLoad">temp.mct_fact_shipment_dialy_factLoad</operation>
-                        </parameter>
-                     </serviceInput>
-                     <serviceOutput>
-                        <operation source="field"
-                                   to="temp.mct_fact_shipment_dialy_factLoad/output/Object_Name">Object Name</operation>
-                        <operation source="field" to="temp.mct_fact_shipment_dialy_factLoad/output/Run_Id">Run Id</operation>
-                        <operation source="field" to="temp.mct_fact_shipment_dialy_factLoad/output/Log_Id">Log Id</operation>
-                        <operation source="field"
-                                   to="temp.mct_fact_shipment_dialy_factLoad/output/Task_Id">Task Id</operation>
-                        <operation source="field"
-                                   to="temp.mct_fact_shipment_dialy_factLoad/output/Task_Status">Task Status</operation>
-                        <operation source="field"
-                                   to="temp.mct_fact_shipment_dialy_factLoad/output/Success_Source_Rows">Success Source Rows</operation>
-                        <operation source="field"
-                                   to="temp.mct_fact_shipment_dialy_factLoad/output/Failed_Source_Rows">Failed Source Rows</operation>
-                        <operation source="field"
-                                   to="temp.mct_fact_shipment_dialy_factLoad/output/Success_Target_Rows">Success Target Rows</operation>
-                        <operation source="field"
-                                   to="temp.mct_fact_shipment_dialy_factLoad/output/Failed_Target_Rows">Failed Target Rows</operation>
-                        <operation source="field"
-                                   to="temp.mct_fact_shipment_dialy_factLoad/output/Start_Time">Start Time</operation>
-                        <operation source="field"
-                                   to="temp.mct_fact_shipment_dialy_factLoad/output/End_Time">End Time</operation>
-                        <operation source="field"
-                                   to="temp.mct_fact_shipment_dialy_factLoad/output/Error_Message">Error Message</operation>
-                     </serviceOutput>
-                  </service>
-                  <link id="kh6837ry" targetId="c"/>
-                  <events>
-                     <catch faultField="temp.mct_fact_shipment_dialy_factLoad/fault"
-                            id="kh6837sa"
-                            interrupting="true"
-                            name="error">
-                        <suspend/>
-                     </catch>
-                     <catch faultField="temp.mct_fact_shipment_dialy_factLoad/fault"
-                            id="kh6837sb"
-                            interrupting="true"
-                            name="warning"/>
-                  </events>
-               </eventContainer>
                <end id="c"/>
             </flow>
             <dependencies>
@@ -599,11 +654,26 @@
                      <field label="Fault" name="fault" type="reference"/>
                   </detail>
                </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="m-Runid--table"
+                              isByCopy="true"
+                              name="m-Runid--table">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters" name="input" type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
             </dependencies>
          </taskflow>
       </types1:Entry>
       <types1:GUID>0UwzaUc4uIVjOM8Lq7ayYx</types1:GUID>
       <types1:DisplayName>tf_SupplyChain_Dimension_fact</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2021-04-20T09:15:55.029Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2021-06-21T15:10:04.496Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

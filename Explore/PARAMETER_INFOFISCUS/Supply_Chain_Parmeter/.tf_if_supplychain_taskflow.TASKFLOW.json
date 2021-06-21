@@ -36,7 +36,27 @@
       "additionalInfo" : {
         "description" : "",
         "contentType" : "application/json; charset=utf-8",
-        "documentState" : "INVALID"
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/PARAMETER_INFOFISCUS/Supply_Chain_Parmeter"
+  }, {
+    "id" : "ajgxfNHwGXyia8aAbx1NqQ",
+    "name" : "TF_AUDIT",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "Ri92qBbbeJOSM8N-gt-44222849-2021-05-04T07:19:30.708Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : null,
+        "documentState" : "VALID"
       }
     },
     "path" : "/Explore/PARAMETER_INFOFISCUS/Supply_Chain_Parmeter"
@@ -56,7 +76,7 @@
       "additionalInfo" : {
         "description" : "",
         "contentType" : "application/json; charset=utf-8",
-        "documentState" : "INVALID"
+        "documentState" : "VALID"
       }
     },
     "path" : "/Explore/PARAMETER_INFOFISCUS/Supply_Chain_Parmeter"

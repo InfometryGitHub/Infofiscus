@@ -1,0 +1,91 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>OOWIuOSSHCwkNmu-gt-44776138-2021-05-04T12:48:44.645Z::tf.xml</types1:EntryId>
+      <types1:Name>TF_Sales_Analytics-5</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>AISHWARYAK</types1:CreatedBy>
+      <types1:CreationDate>2021-05-04T12:48:45Z</types1:CreationDate>
+      <types1:ModifiedBy>AISHWARYAK</types1:ModifiedBy>
+      <types1:ModificationDate>2021-05-10T09:33:10Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>AISHWARYAK</types1:PublishedBy>
+      <types1:PublicationDate>2021-05-10T10:01:56Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.TF_Sales_Analytics-5/TF_Sales_Analytics-5.tf.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="TF_Sales_Analytics"
+                   name="TF_Sales_Analytics-5"
+                   overrideAPIName="false">
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <notes/>
+            <deployment suspendOnFault="true" tracingLevel="verbose">
+               <rest/>
+               <emailProperties emailOnSuspend="true">
+                  <emailTo>aiswarya.k@infometry.net</emailTo>
+                  <emailCc>bijild.joseph@infometry.net</emailCc>
+                  <emailSubject>Taskflow_Suspended</emailSubject>
+                  <emailContentType>html</emailContentType>
+                  <emailBody/>
+               </emailProperties>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="knsxhw6t" targetId="knsxhw6s"/>
+               </start>
+               <subflow id="knsxhw6s">
+                  <title>TF_Sales_Analytics_Landing</title>
+                  <subflowGUID>0DhfZd6n2ZLlwKjfS7YjWt</subflowGUID>
+                  <subflowPath>TF_Sales_Analytics_Landing-3</subflowPath>
+                  <runForEach>false</runForEach>
+                  <input/>
+                  <outputDef/>
+                  <link id="knsxhw6z" targetId="knsxhw6y"/>
+               </subflow>
+               <subflow id="knsxhw6y">
+                  <title>TF_Sales_Analytics_Staging</title>
+                  <subflowGUID>7ODk0JQgmmPeNQYR7pkXQx</subflowGUID>
+                  <subflowPath>TF_Sales_Analytics_Staging-5</subflowPath>
+                  <runForEach>false</runForEach>
+                  <input/>
+                  <outputDef/>
+                  <link id="knsxhw75" targetId="knsxhw74"/>
+               </subflow>
+               <subflow id="knsxhw74">
+                  <title>tf_Sales_Analytics_Dimension</title>
+                  <subflowGUID>4rVAV0RmHmAgZkIGDxh5Ej</subflowGUID>
+                  <subflowPath>tf_Sales_Analytics_Dimension-5</subflowPath>
+                  <runForEach>false</runForEach>
+                  <input/>
+                  <outputDef/>
+                  <link id="koa1ntb3" targetId="koa1ntb2"/>
+               </subflow>
+               <subflow id="koa1ntb2">
+                  <title>tf_Audit</title>
+                  <subflowGUID>kHE4tYtkTaxdIR9BkFeeys</subflowGUID>
+                  <subflowPath>TF_AUDIT-4</subflowPath>
+                  <runForEach>false</runForEach>
+                  <input/>
+                  <outputDef/>
+                  <link id="koa1ntb4" targetId="c"/>
+               </subflow>
+               <end id="c"/>
+            </flow>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>4uLsgEPqOXgky4VnE8Z6es</types1:GUID>
+      <types1:DisplayName>TF_Sales_Analytics</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2021-06-21T15:10:04.606Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

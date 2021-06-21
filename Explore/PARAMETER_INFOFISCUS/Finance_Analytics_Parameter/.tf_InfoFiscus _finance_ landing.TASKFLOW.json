@@ -44,6 +44,29 @@
     },
     "path" : "/Explore/PARAMETER_INFOFISCUS/Finance_Analytics_Parameter"
   }, {
+    "id" : "k57OTvLrsslcy8eJQuDx2g",
+    "name" : "m_Runid _table",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01037X0Z0000000004VY"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/PARAMETER_INFOFISCUS/Finance_Analytics_Parameter"
+  }, {
     "id" : "3kURgy2vdhYeWcVEupBmyX",
     "name" : "mct_Netsuite_Subsidary_Extract",
     "type" : "MTT",

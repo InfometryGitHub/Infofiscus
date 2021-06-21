@@ -12,11 +12,11 @@
       <types1:ProcessGroup/>
       <types1:CreatedBy>BIJILDJ</types1:CreatedBy>
       <types1:CreationDate>2021-03-18T06:02:24Z</types1:CreationDate>
-      <types1:ModifiedBy>BIJILDJ</types1:ModifiedBy>
-      <types1:ModificationDate>2021-04-06T09:34:01Z</types1:ModificationDate>
+      <types1:ModifiedBy>AISHWARYAK</types1:ModifiedBy>
+      <types1:ModificationDate>2021-05-04T07:23:08Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>AISHWARYAK</types1:PublishedBy>
-      <types1:PublicationDate>2021-04-09T14:22:40Z</types1:PublicationDate>
+      <types1:PublicationDate>2021-05-04T07:55:00Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/tf.tf_SupplyChain_staging-2/tf_SupplyChain_staging-2.tf.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -83,6 +83,13 @@
                      <option name="failOnFault">false</option>
                   </options>
                </field>
+               <field description="" name="Mtt_Run" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:m-Runid--table</option>
+                  </options>
+               </field>
             </tempFields>
             <notes/>
             <deployment suspendOnFault="false" tracingLevel="verbose">
@@ -90,8 +97,56 @@
             </deployment>
             <flow id="a">
                <start id="b">
-                  <link id="klukakyw" targetId="kkqf3rjl"/>
+                  <link id="ko9pek6c" targetId="ko9pek6o"/>
                </start>
+               <eventContainer id="ko9pek6o">
+                  <service id="ko9pek6b">
+                     <title>Mtt_Run</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">m_Runid _table</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">9nLZP7z1K9sjB1iVrpBXAN</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="m-Runid--table">temp.Mtt_Run</operation>
+                           <operation source="formula" to="m-Runid--table/input[1]/RunId">
+                              <expression language="XQuery">util:getProcessId()</expression>
+                           </operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.Mtt_Run/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Task_Status">Task Status</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Error_Message">Error Message</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="ko9pek6d" targetId="kkqf3rjl"/>
+                  <events>
+                     <catch faultField="temp.Mtt_Run/fault"
+                            id="ko9pek6m"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.Mtt_Run/fault"
+                            id="ko9pek6n"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
                <container id="kkqf3rjl" type="parallel">
                   <title>Staging</title>
                   <flow id="kkqf3rjp">
@@ -339,14 +394,131 @@
                   <link id="kkqf3ror" targetId="kkqf3ros" type="containerLink"/>
                   <link id="kkqf3rpa" targetId="kkqf3rpb" type="containerLink"/>
                   <link id="kkqf3s5z" targetId="kkqf3s60" type="containerLink"/>
-                  <link id="klukal0f" targetId="c"/>
+                  <link id="ko9p34d0" targetId="c"/>
                </container>
                <end id="c"/>
             </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-stg-Transaction-lines-Extract"
+                              isByCopy="true"
+                              name="mct-stg-Transaction-lines-Extract">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="InOut Parameters" name="inout" type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-Stg-Booking-Extract"
+                              isByCopy="true"
+                              name="mct-Stg-Booking-Extract">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-Stg-transaction-link-Extract"
+                              isByCopy="true"
+                              name="mct-Stg-transaction-link-Extract">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="InOut Parameters" name="inout" type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-Stg-customers-Extract"
+                              isByCopy="true"
+                              name="mct-Stg-customers-Extract">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-Stg-product-Extract"
+                              isByCopy="true"
+                              name="mct-Stg-product-Extract">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-Stg-Accounts-Extract"
+                              isByCopy="true"
+                              name="mct-Stg-Accounts-Extract">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-Stg-Shipment-Extract"
+                              isByCopy="true"
+                              name="mct-Stg-Shipment-Extract">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="m-Runid--table"
+                              isByCopy="true"
+                              name="m-Runid--table">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters" name="input" type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+            </dependencies>
          </taskflow>
       </types1:Entry>
       <types1:GUID>4ywPayVqqRfhUGY5o6DLss</types1:GUID>
       <types1:DisplayName>tf_SupplyChain_staging</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2021-04-20T09:15:55.002Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2021-06-21T15:10:04.436Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

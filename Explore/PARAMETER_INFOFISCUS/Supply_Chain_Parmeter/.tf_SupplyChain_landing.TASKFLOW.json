@@ -15,7 +15,7 @@
       "additionalInfo" : {
         "description" : "",
         "contentType" : "application/json; charset=utf-8",
-        "documentState" : "INVALID"
+        "documentState" : "VALID"
       }
     }
   },
@@ -200,6 +200,29 @@
       "additionalInfo" : {
         "description" : "",
         "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/PARAMETER_INFOFISCUS/Supply_Chain_Parmeter"
+  }, {
+    "id" : "9nLZP7z1K9sjB1iVrpBXAN",
+    "name" : "m_Runid _table",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01037X0Z0000000004W2"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : null,
         "documentState" : "VALID"
       }
     },

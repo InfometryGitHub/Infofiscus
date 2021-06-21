@@ -13,10 +13,10 @@
       <types1:CreatedBy>BIJILDJ</types1:CreatedBy>
       <types1:CreationDate>2021-03-18T10:39:27Z</types1:CreationDate>
       <types1:ModifiedBy>AISHWARYAK</types1:ModifiedBy>
-      <types1:ModificationDate>2021-04-14T14:22:19Z</types1:ModificationDate>
+      <types1:ModificationDate>2021-05-17T08:45:15Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>AISHWARYAK</types1:PublishedBy>
-      <types1:PublicationDate>2021-04-15T12:58:17Z</types1:PublicationDate>
+      <types1:PublicationDate>2021-05-27T14:01:42Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/tf.tf_InfoFiscus_finance_stage/tf_InfoFiscus_finance_stage.tf.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -66,20 +66,9 @@
                      <option name="failOnFault">false</option>
                   </options>
                </field>
-               <field description=""
-                      name="mct_Landing_Accounts_Stg_Dimensions_Extract"
-                      type="reference">
+               <field description="" name="mtt_Stg_Account_Extract" type="reference">
                   <options>
-                     <option name="referenceTo">$po:mct-Landing-Accounts-Stg-Dimensions-Extract</option>
-                     <option name="failOnNotRun">false</option>
-                     <option name="failOnFault">false</option>
-                  </options>
-               </field>
-               <field description=""
-                      name="mct_Landing_Departments_Stg_Dimensions_Extract"
-                      type="reference">
-                  <options>
-                     <option name="referenceTo">$po:mct-Landing-Departments-Stg-Dimensions-Extract</option>
+                     <option name="referenceTo">$po:mtt-Stg-Account-Extract</option>
                      <option name="failOnNotRun">false</option>
                      <option name="failOnFault">false</option>
                   </options>
@@ -98,11 +87,23 @@
                      <option name="referenceTo">$po:mct-stg-Bill-Extract</option>
                   </options>
                </field>
-               <field description="" name="mct_stg_gljournal_extract" type="reference">
+               <field description="" name="untitled1" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="mtt_Runid" type="reference">
                   <options>
                      <option name="failOnNotRun">false</option>
                      <option name="failOnFault">false</option>
-                     <option name="referenceTo">$po:mct-Landing-Stg-GL-Transaction-Extract</option>
+                     <option name="referenceTo">$po:m-Runid--table</option>
+                  </options>
+               </field>
+               <field description="" name="mtt_stg_Department_Extract" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mtt-Stg-Department-Extract</option>
                   </options>
                </field>
             </tempFields>
@@ -112,8 +113,156 @@
             </deployment>
             <flow id="a">
                <start id="b">
-                  <link id="km38nd88" targetId="kh65xki4"/>
+                  <link id="kojsyeje" targetId="kojsyek4"/>
                </start>
+               <eventContainer id="kojsyek4">
+                  <service id="kojsyejd">
+                     <title>mtt_Runid</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">m_Runid _table</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">k57OTvLrsslcy8eJQuDx2g</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="m-Runid--table">temp.mtt_Runid</operation>
+                           <operation source="formula" to="m-Runid--table/input[1]/RunId">
+                              <expression language="XQuery">util:getProcessId()</expression>
+                           </operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.mtt_Runid/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.mtt_Runid/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.mtt_Runid/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.mtt_Runid/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.mtt_Runid/output/Task_Status">Task Status</operation>
+                        <operation source="field" to="temp.mtt_Runid/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.mtt_Runid/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field" to="temp.mtt_Runid/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.mtt_Runid/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.mtt_Runid/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.mtt_Runid/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.mtt_Runid/output/Error_Message">Error Message</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="kojsyejf" targetId="kh65xki4"/>
+                  <events>
+                     <catch faultField="temp.mtt_Runid/fault"
+                            id="kojsyek2"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.mtt_Runid/fault"
+                            id="kojsyek3"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="kn5lasjw">
+                  <service id="kn5lasit">
+                     <title>mct_stg_invoice_Extract</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mct_stg_invoice_Extract</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">fRsfw7sSZmggYpNWl8YikC</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mct-stg-invoice-Extract">temp.mct_stg_invoice_Extract</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.mct_stg_invoice_Extract/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.mct_stg_invoice_Extract/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.mct_stg_invoice_Extract/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.mct_stg_invoice_Extract/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.mct_stg_invoice_Extract/output/Task_Status">Task Status</operation>
+                        <operation source="field"
+                                   to="temp.mct_stg_invoice_Extract/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.mct_stg_invoice_Extract/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.mct_stg_invoice_Extract/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.mct_stg_invoice_Extract/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.mct_stg_invoice_Extract/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.mct_stg_invoice_Extract/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.mct_stg_invoice_Extract/output/Error_Message">Error Message</operation>
+                        <operation source="field" to="temp.mct_stg_invoice_Extract/inout/RunDate">RunDate</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="kn5lasj5" targetId="kn5lasky"/>
+                  <events>
+                     <catch faultField="temp.mct_stg_invoice_Extract/fault"
+                            id="kn5lasju"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.mct_stg_invoice_Extract/fault"
+                            id="kn5lasjv"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="kn5lasky">
+                  <service id="kn5lasj4">
+                     <title>mct_stg_GL_Bill_Extract</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mct_stg_Bill_Extract</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">601OVAb98I2haccK7r8PAv</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mct-stg-Bill-Extract">temp.mct_stg_GL_Bill_Extract</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.mct_stg_GL_Bill_Extract/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.mct_stg_GL_Bill_Extract/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.mct_stg_GL_Bill_Extract/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.mct_stg_GL_Bill_Extract/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.mct_stg_GL_Bill_Extract/output/Task_Status">Task Status</operation>
+                        <operation source="field"
+                                   to="temp.mct_stg_GL_Bill_Extract/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.mct_stg_GL_Bill_Extract/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.mct_stg_GL_Bill_Extract/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.mct_stg_GL_Bill_Extract/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.mct_stg_GL_Bill_Extract/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.mct_stg_GL_Bill_Extract/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.mct_stg_GL_Bill_Extract/output/Error_Message">Error Message</operation>
+                        <operation source="field" to="temp.mct_stg_GL_Bill_Extract/inout/RunDate">RunDate</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="kojsyei6" targetId="c"/>
+                  <events>
+                     <catch faultField="temp.mct_stg_GL_Bill_Extract/fault"
+                            id="kn5laskw"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.mct_stg_GL_Bill_Extract/fault"
+                            id="kn5laskx"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
                <container id="kh65xki4" type="parallel">
                   <title>Staging</title>
                   <flow id="kh65xki8">
@@ -255,253 +404,116 @@
                   <flow id="kh65xkje">
                      <eventContainer id="kh65xkrf">
                         <service id="kh65xkqy">
-                           <title>mct_Landing_Accounts_Stg_Dimensions_Extract</title>
+                           <title>mtt_Stg_Account_Extract</title>
                            <serviceName>ICSExecuteDataTask</serviceName>
                            <serviceGUID/>
                            <serviceInput>
                               <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
                               <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
-                              <parameter name="Task Name" source="constant" updatable="true">mct_Landing_Accounts_Stg_Dimensions_Extract</parameter>
-                              <parameter name="GUID" source="constant" updatable="true">8rIMhfV2HNXeQ3ClXJmFEM</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mtt_Stg_Account_Extract</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">lW0FJDCRhspcE5hiDXd8OZ</parameter>
                               <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
-                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
                               <parameter name="taskField" source="nested">
-                                 <operation source="field" to="mct-Landing-Accounts-Stg-Dimensions-Extract">temp.mct_Landing_Accounts_Stg_Dimensions_Extract</operation>
+                                 <operation source="field" to="mtt-Stg-Account-Extract">temp.mtt_Stg_Account_Extract</operation>
                               </parameter>
                            </serviceInput>
-                           <serviceOutput/>
+                           <serviceOutput>
+                              <operation source="field" to="temp.mtt_Stg_Account_Extract/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.mtt_Stg_Account_Extract/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.mtt_Stg_Account_Extract/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.mtt_Stg_Account_Extract/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.mtt_Stg_Account_Extract/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Account_Extract/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Account_Extract/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Account_Extract/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_Stg_Account_Extract/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.mtt_Stg_Account_Extract/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.mtt_Stg_Account_Extract/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.mtt_Stg_Account_Extract/output/Error_Message">Error Message</operation>
+                              <operation source="field" to="temp.mtt_Stg_Account_Extract/inout/RunDate">RunDate</operation>
+                           </serviceOutput>
                         </service>
-                        <link id="kie0bxqq" targetId="kmev1wlo"/>
                         <events>
-                           <catch faultField="temp.mct_Landing_Accounts_Stg_Dimensions_Extract/fault"
+                           <catch faultField="temp.mtt_Stg_Account_Extract/fault"
                                   id="kh65xkrd"
                                   interrupting="true"
                                   name="error">
                               <suspend/>
                            </catch>
-                           <catch faultField="temp.mct_Landing_Accounts_Stg_Dimensions_Extract/fault"
+                           <catch faultField="temp.mtt_Stg_Account_Extract/fault"
                                   id="kh65xkre"
-                                  interrupting="true"
-                                  name="warning"/>
-                        </events>
-                     </eventContainer>
-                     <eventContainer id="kmev1wlo">
-                        <service id="kie0bxqp">
-                           <title>mct_Landing_Departments_Stg_Dimensions_Extract</title>
-                           <serviceName>ICSExecuteDataTask</serviceName>
-                           <serviceGUID/>
-                           <serviceInput>
-                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
-                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
-                              <parameter name="Task Name" source="constant" updatable="true">mct_Landing_Departments_Stg_Dimensions_Extract</parameter>
-                              <parameter name="GUID" source="constant" updatable="true">1knh2YRVXebiQmM18EOGaP</parameter>
-                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
-                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
-                              <parameter name="taskField" source="nested">
-                                 <operation source="field" to="mct-Landing-Departments-Stg-Dimensions-Extract">temp.mct_Landing_Departments_Stg_Dimensions_Extract</operation>
-                              </parameter>
-                           </serviceInput>
-                           <serviceOutput>
-                              <operation source="field"
-                                         to="temp.mct_Landing_Departments_Stg_Dimensions_Extract/output/Object_Name">Object Name</operation>
-                              <operation source="field"
-                                         to="temp.mct_Landing_Departments_Stg_Dimensions_Extract/output/Run_Id">Run Id</operation>
-                              <operation source="field"
-                                         to="temp.mct_Landing_Departments_Stg_Dimensions_Extract/output/Log_Id">Log Id</operation>
-                              <operation source="field"
-                                         to="temp.mct_Landing_Departments_Stg_Dimensions_Extract/output/Task_Id">Task Id</operation>
-                              <operation source="field"
-                                         to="temp.mct_Landing_Departments_Stg_Dimensions_Extract/output/Task_Status">Task Status</operation>
-                              <operation source="field"
-                                         to="temp.mct_Landing_Departments_Stg_Dimensions_Extract/output/Success_Source_Rows">Success Source Rows</operation>
-                              <operation source="field"
-                                         to="temp.mct_Landing_Departments_Stg_Dimensions_Extract/output/Failed_Source_Rows">Failed Source Rows</operation>
-                              <operation source="field"
-                                         to="temp.mct_Landing_Departments_Stg_Dimensions_Extract/output/Success_Target_Rows">Success Target Rows</operation>
-                              <operation source="field"
-                                         to="temp.mct_Landing_Departments_Stg_Dimensions_Extract/output/Failed_Target_Rows">Failed Target Rows</operation>
-                              <operation source="field"
-                                         to="temp.mct_Landing_Departments_Stg_Dimensions_Extract/output/Start_Time">Start Time</operation>
-                              <operation source="field"
-                                         to="temp.mct_Landing_Departments_Stg_Dimensions_Extract/output/End_Time">End Time</operation>
-                              <operation source="field"
-                                         to="temp.mct_Landing_Departments_Stg_Dimensions_Extract/output/Error_Message">Error Message</operation>
-                              <operation source="field"
-                                         to="temp.mct_Landing_Departments_Stg_Dimensions_Extract/inout/RunDate">RunDate</operation>
-                           </serviceOutput>
-                        </service>
-                        <events>
-                           <catch faultField="temp.mct_Landing_Departments_Stg_Dimensions_Extract/fault"
-                                  id="kmev1wlm"
-                                  interrupting="true"
-                                  name="error">
-                              <suspend/>
-                           </catch>
-                           <catch faultField="temp.mct_Landing_Departments_Stg_Dimensions_Extract/fault"
-                                  id="kmev1wln"
                                   interrupting="true"
                                   name="warning"/>
                         </events>
                      </eventContainer>
                      <link id="kh65xkjf" targetId="kh65xki4" type="containerLink"/>
                   </flow>
+                  <flow id="kosd0l3g">
+                     <eventContainer id="kosd0l40">
+                        <service id="kosd0l3q">
+                           <title>mtt_stg_Department_Extract</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mtt_Stg_Department_Extract</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">ajNK1FIqUIHb303P58LRgp</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mtt-Stg-Department-Extract">temp.mtt_stg_Department_Extract</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.mtt_stg_Department_Extract/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.mtt_stg_Department_Extract/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.mtt_stg_Department_Extract/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.mtt_stg_Department_Extract/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.mtt_stg_Department_Extract/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.mtt_stg_Department_Extract/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_stg_Department_Extract/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_stg_Department_Extract/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.mtt_stg_Department_Extract/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.mtt_stg_Department_Extract/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.mtt_stg_Department_Extract/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.mtt_stg_Department_Extract/output/Error_Message">Error Message</operation>
+                              <operation source="field" to="temp.mtt_stg_Department_Extract/inout/RunDate">RunDate</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.mtt_stg_Department_Extract/fault"
+                                  id="kosd0l3y"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.mtt_stg_Department_Extract/fault"
+                                  id="kosd0l3z"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="kosd0l3h" targetId="kh65xki4" type="containerLink"/>
+                  </flow>
                   <link id="kh65xki7" targetId="kh65xki8" type="containerLink"/>
                   <link id="kh65xkia" targetId="kh65xkib" type="containerLink"/>
                   <link id="kh65xkim" targetId="kh65xkin" type="containerLink"/>
                   <link id="kh65xkiz" targetId="kh65xkj0" type="containerLink"/>
-                  <link id="knhjk4qf" targetId="knhjk4qp"/>
                   <link id="kh65xkjd" targetId="kh65xkje" type="containerLink"/>
+                  <link id="kosd0l3f" targetId="kosd0l3g" type="containerLink"/>
+                  <link id="kojvuunv" targetId="kn5lasjw"/>
                </container>
-               <eventContainer id="knhjk4qp">
-                  <service id="knhjk4qe">
-                     <title>mct_stg_gljournal_extract</title>
-                     <serviceName>ICSExecuteDataTask</serviceName>
-                     <serviceGUID/>
-                     <serviceInput>
-                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
-                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
-                        <parameter name="Task Name" source="constant" updatable="true">mct_Landing_Stg_GL_Transaction_Extract</parameter>
-                        <parameter name="GUID" source="constant" updatable="true">aERwGoo9F6RlYugXL0IEMq</parameter>
-                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
-                        <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
-                        <parameter name="taskField" source="nested">
-                           <operation source="field" to="mct-Landing-Stg-GL-Transaction-Extract">temp.mct_stg_gljournal_extract</operation>
-                        </parameter>
-                     </serviceInput>
-                     <serviceOutput>
-                        <operation source="field" to="temp.mct_stg_gljournal_extract/output/Object_Name">Object Name</operation>
-                        <operation source="field" to="temp.mct_stg_gljournal_extract/output/Run_Id">Run Id</operation>
-                        <operation source="field" to="temp.mct_stg_gljournal_extract/output/Log_Id">Log Id</operation>
-                        <operation source="field" to="temp.mct_stg_gljournal_extract/output/Task_Id">Task Id</operation>
-                        <operation source="field" to="temp.mct_stg_gljournal_extract/output/Task_Status">Task Status</operation>
-                        <operation source="field"
-                                   to="temp.mct_stg_gljournal_extract/output/Success_Source_Rows">Success Source Rows</operation>
-                        <operation source="field"
-                                   to="temp.mct_stg_gljournal_extract/output/Failed_Source_Rows">Failed Source Rows</operation>
-                        <operation source="field"
-                                   to="temp.mct_stg_gljournal_extract/output/Success_Target_Rows">Success Target Rows</operation>
-                        <operation source="field"
-                                   to="temp.mct_stg_gljournal_extract/output/Failed_Target_Rows">Failed Target Rows</operation>
-                        <operation source="field" to="temp.mct_stg_gljournal_extract/output/Start_Time">Start Time</operation>
-                        <operation source="field" to="temp.mct_stg_gljournal_extract/output/End_Time">End Time</operation>
-                        <operation source="field" to="temp.mct_stg_gljournal_extract/output/Error_Message">Error Message</operation>
-                        <operation source="field" to="temp.mct_stg_gljournal_extract/inout/RunDate">RunDate</operation>
-                     </serviceOutput>
-                  </service>
-                  <link id="knhjk4qg" targetId="kn5lasjw"/>
-                  <events>
-                     <catch faultField="temp.mct_stg_gljournal_extract/fault"
-                            id="knhjk4qn"
-                            interrupting="true"
-                            name="error">
-                        <suspend/>
-                     </catch>
-                     <catch faultField="temp.mct_stg_gljournal_extract/fault"
-                            id="knhjk4qo"
-                            interrupting="true"
-                            name="warning"/>
-                  </events>
-               </eventContainer>
-               <eventContainer id="kn5lasjw">
-                  <service id="kn5lasit">
-                     <title>mct_stg_invoice_Extract</title>
-                     <serviceName>ICSExecuteDataTask</serviceName>
-                     <serviceGUID/>
-                     <serviceInput>
-                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
-                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
-                        <parameter name="Task Name" source="constant" updatable="true">mct_stg_invoice_Extract</parameter>
-                        <parameter name="GUID" source="constant" updatable="true">fRsfw7sSZmggYpNWl8YikC</parameter>
-                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
-                        <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
-                        <parameter name="taskField" source="nested">
-                           <operation source="field" to="mct-stg-invoice-Extract">temp.mct_stg_invoice_Extract</operation>
-                        </parameter>
-                     </serviceInput>
-                     <serviceOutput>
-                        <operation source="field" to="temp.mct_stg_invoice_Extract/output/Object_Name">Object Name</operation>
-                        <operation source="field" to="temp.mct_stg_invoice_Extract/output/Run_Id">Run Id</operation>
-                        <operation source="field" to="temp.mct_stg_invoice_Extract/output/Log_Id">Log Id</operation>
-                        <operation source="field" to="temp.mct_stg_invoice_Extract/output/Task_Id">Task Id</operation>
-                        <operation source="field" to="temp.mct_stg_invoice_Extract/output/Task_Status">Task Status</operation>
-                        <operation source="field"
-                                   to="temp.mct_stg_invoice_Extract/output/Success_Source_Rows">Success Source Rows</operation>
-                        <operation source="field"
-                                   to="temp.mct_stg_invoice_Extract/output/Failed_Source_Rows">Failed Source Rows</operation>
-                        <operation source="field"
-                                   to="temp.mct_stg_invoice_Extract/output/Success_Target_Rows">Success Target Rows</operation>
-                        <operation source="field"
-                                   to="temp.mct_stg_invoice_Extract/output/Failed_Target_Rows">Failed Target Rows</operation>
-                        <operation source="field" to="temp.mct_stg_invoice_Extract/output/Start_Time">Start Time</operation>
-                        <operation source="field" to="temp.mct_stg_invoice_Extract/output/End_Time">End Time</operation>
-                        <operation source="field" to="temp.mct_stg_invoice_Extract/output/Error_Message">Error Message</operation>
-                        <operation source="field" to="temp.mct_stg_invoice_Extract/inout/RunDate">RunDate</operation>
-                     </serviceOutput>
-                  </service>
-                  <link id="kn5lasj5" targetId="kn5lasky"/>
-                  <events>
-                     <catch faultField="temp.mct_stg_invoice_Extract/fault"
-                            id="kn5lasju"
-                            interrupting="true"
-                            name="error">
-                        <suspend/>
-                     </catch>
-                     <catch faultField="temp.mct_stg_invoice_Extract/fault"
-                            id="kn5lasjv"
-                            interrupting="true"
-                            name="warning"/>
-                  </events>
-               </eventContainer>
-               <eventContainer id="kn5lasky">
-                  <service id="kn5lasj4">
-                     <title>mct_stg_GL_Bill_Extract</title>
-                     <serviceName>ICSExecuteDataTask</serviceName>
-                     <serviceGUID/>
-                     <serviceInput>
-                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
-                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
-                        <parameter name="Task Name" source="constant" updatable="true">mct_stg_Bill_Extract</parameter>
-                        <parameter name="GUID" source="constant" updatable="true">601OVAb98I2haccK7r8PAv</parameter>
-                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
-                        <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
-                        <parameter name="taskField" source="nested">
-                           <operation source="field" to="mct-stg-Bill-Extract">temp.mct_stg_GL_Bill_Extract</operation>
-                        </parameter>
-                     </serviceInput>
-                     <serviceOutput>
-                        <operation source="field" to="temp.mct_stg_GL_Bill_Extract/output/Object_Name">Object Name</operation>
-                        <operation source="field" to="temp.mct_stg_GL_Bill_Extract/output/Run_Id">Run Id</operation>
-                        <operation source="field" to="temp.mct_stg_GL_Bill_Extract/output/Log_Id">Log Id</operation>
-                        <operation source="field" to="temp.mct_stg_GL_Bill_Extract/output/Task_Id">Task Id</operation>
-                        <operation source="field" to="temp.mct_stg_GL_Bill_Extract/output/Task_Status">Task Status</operation>
-                        <operation source="field"
-                                   to="temp.mct_stg_GL_Bill_Extract/output/Success_Source_Rows">Success Source Rows</operation>
-                        <operation source="field"
-                                   to="temp.mct_stg_GL_Bill_Extract/output/Failed_Source_Rows">Failed Source Rows</operation>
-                        <operation source="field"
-                                   to="temp.mct_stg_GL_Bill_Extract/output/Success_Target_Rows">Success Target Rows</operation>
-                        <operation source="field"
-                                   to="temp.mct_stg_GL_Bill_Extract/output/Failed_Target_Rows">Failed Target Rows</operation>
-                        <operation source="field" to="temp.mct_stg_GL_Bill_Extract/output/Start_Time">Start Time</operation>
-                        <operation source="field" to="temp.mct_stg_GL_Bill_Extract/output/End_Time">End Time</operation>
-                        <operation source="field" to="temp.mct_stg_GL_Bill_Extract/output/Error_Message">Error Message</operation>
-                        <operation source="field" to="temp.mct_stg_GL_Bill_Extract/inout/RunDate">RunDate</operation>
-                     </serviceOutput>
-                  </service>
-                  <link id="kn5lasj6" targetId="c"/>
-                  <events>
-                     <catch faultField="temp.mct_stg_GL_Bill_Extract/fault"
-                            id="kn5laskw"
-                            interrupting="true"
-                            name="error">
-                        <suspend/>
-                     </catch>
-                     <catch faultField="temp.mct_stg_GL_Bill_Extract/fault"
-                            id="kn5laskx"
-                            interrupting="true"
-                            name="warning"/>
-                  </events>
-               </eventContainer>
                <end id="c"/>
             </flow>
             <dependencies>
@@ -566,24 +578,9 @@
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
-                              displayName="mct-Landing-Accounts-Stg-Dimensions-Extract"
+                              displayName="mtt-Stg-Account-Extract"
                               isByCopy="true"
-                              name="mct-Landing-Accounts-Stg-Dimensions-Extract">
-                  <description/>
-                  <tags/>
-                  <detail>
-                     <field label="InOut Parameters" name="inout" type="reference"/>
-                     <field label="TaskProperties Parameters"
-                            name="taskProperties"
-                            type="reference"/>
-                     <field label="Output Parameters" name="output" type="reference"/>
-                     <field label="Fault" name="fault" type="reference"/>
-                  </detail>
-               </processObject>
-               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
-                              displayName="mct-Landing-Departments-Stg-Dimensions-Extract"
-                              isByCopy="true"
-                              name="mct-Landing-Departments-Stg-Dimensions-Extract">
+                              name="mtt-Stg-Account-Extract">
                   <description/>
                   <tags/>
                   <detail>
@@ -625,11 +622,41 @@
                      <field label="Fault" name="fault" type="reference"/>
                   </detail>
                </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="m-Runid--table"
+                              isByCopy="true"
+                              name="m-Runid--table">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters" name="input" type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mtt-Stg-Department-Extract"
+                              isByCopy="true"
+                              name="mtt-Stg-Department-Extract">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="InOut Parameters" name="inout" type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
             </dependencies>
          </taskflow>
       </types1:Entry>
       <types1:GUID>kYc3vMbeT0oiUlVvJBzwqJ</types1:GUID>
       <types1:DisplayName>tf_InfoFiscus_finance_stage</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2021-04-20T09:15:54.977Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2021-06-21T15:10:04.546Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

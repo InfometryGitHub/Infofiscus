@@ -12,11 +12,11 @@
       <types1:ProcessGroup/>
       <types1:CreatedBy>BIJILDJ</types1:CreatedBy>
       <types1:CreationDate>2021-03-18T10:39:27Z</types1:CreationDate>
-      <types1:ModifiedBy>BIJILDJ</types1:ModifiedBy>
-      <types1:ModificationDate>2021-04-15T15:27:51Z</types1:ModificationDate>
+      <types1:ModifiedBy>AISHWARYAK</types1:ModifiedBy>
+      <types1:ModificationDate>2021-04-30T13:05:19Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>BIJILDJ</types1:PublishedBy>
-      <types1:PublicationDate>2021-04-15T15:28:06Z</types1:PublicationDate>
+      <types1:PublishedBy>AISHWARYAK</types1:PublishedBy>
+      <types1:PublicationDate>2021-05-27T14:01:42Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/tf.tf_InfoFiscus_finance_dim_fact_--2/tf_InfoFiscus_finance_dim_fact_--2.tf.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -112,6 +112,13 @@
                      <option name="referenceTo">$po:mct-Dim-Department-DimLoad</option>
                      <option name="failOnNotRun">false</option>
                      <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="Mtt_Run" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:m-Runid--table</option>
                   </options>
                </field>
             </tempFields>
@@ -694,7 +701,7 @@
                         <operation source="field" to="temp.mct_Fact_Bill_FactLoad/output/Error_Message">Error Message</operation>
                      </serviceOutput>
                   </service>
-                  <link id="kn4k08b8" targetId="c"/>
+                  <link id="ko4buer1" targetId="ko4buera"/>
                   <events>
                      <catch faultField="temp.mct_Fact_Bill_FactLoad/fault"
                             id="kn4k08bu"
@@ -704,6 +711,54 @@
                      </catch>
                      <catch faultField="temp.mct_Fact_Bill_FactLoad/fault"
                             id="kn4k08bv"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="ko4buera">
+                  <service id="ko4buer0">
+                     <title>Mtt_Run</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">m_Runid _table</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">k57OTvLrsslcy8eJQuDx2g</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="m-Runid--table">temp.Mtt_Run</operation>
+                           <operation source="formula" to="m-Runid--table/input[1]/RunId">
+                              <expression language="XQuery">util:getProcessId()</expression>
+                           </operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.Mtt_Run/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Task_Status">Task Status</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.Mtt_Run/output/Error_Message">Error Message</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="ko4buer2" targetId="c"/>
+                  <events>
+                     <catch faultField="temp.Mtt_Run/fault"
+                            id="ko4buer8"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.Mtt_Run/fault"
+                            id="ko4buer9"
                             interrupting="true"
                             name="warning"/>
                   </events>
@@ -823,11 +878,82 @@
                      <field label="Fault" name="fault" type="reference"/>
                   </detail>
                </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-Dim-Entity-DimLoad"
+                              isByCopy="true"
+                              name="mct-Dim-Entity-DimLoad">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-Dim-Currencies-DimLoad"
+                              isByCopy="true"
+                              name="mct-Dim-Currencies-DimLoad">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-Dim-Account-DimLoad"
+                              isByCopy="true"
+                              name="mct-Dim-Account-DimLoad">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-Dim-Department-DimLoad"
+                              isByCopy="true"
+                              name="mct-Dim-Department-DimLoad">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="m-Runid--table"
+                              isByCopy="true"
+                              name="m-Runid--table">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters" name="input" type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
             </dependencies>
          </taskflow>
       </types1:Entry>
       <types1:GUID>19nZnImYuTzcI25UU2RM4e</types1:GUID>
       <types1:DisplayName>tf_InfoFiscus_finance_dim_fact -</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2021-04-20T09:15:55.015Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2021-06-21T15:10:04.441Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
